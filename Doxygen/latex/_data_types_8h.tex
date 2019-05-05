@@ -1,0 +1,36 @@
+\hypertarget{_data_types_8h}{\section{/home/prethish/\-Coding/\-Thesis\-\_\-new/\-L\-B\-Skin/include/\-Data\-Types.h File Reference}
+\label{_data_types_8h}\index{/home/prethish/\-Coding/\-Thesis\-\_\-new/\-L\-B\-Skin/include/\-Data\-Types.\-h@{/home/prethish/\-Coding/\-Thesis\-\_\-new/\-L\-B\-Skin/include/\-Data\-Types.\-h}}
+}
+
+
+the commonly used struct data types stored here to access between classes  
+
+
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$ngl/\-Mat4.\-h$>$}\\*
+{\ttfamily \#include $<$ngl/\-Vec3.\-h$>$}\\*
+Include dependency graph for Data\-Types.\-h\-:
+This graph shows which files directly or indirectly include this file\-:
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structvert_data}{vert\-Data}
+\begin{DoxyCompactList}\small\item\em vertex data structure containing position,U\-V and normal information \end{DoxyCompactList}\item 
+struct \hyperlink{structbone_info}{bone\-Info}
+\begin{DoxyCompactList}\small\item\em struct to store bone data per bone for skinning the matrix stored are in the assimp order,so transpose must be used to use with N\-G\-L\-::mat4 matrices \end{DoxyCompactList}\item 
+struct \hyperlink{structvertex_bone_info}{vertex\-Bone\-Info}
+\begin{DoxyCompactList}\small\item\em structure to store data per vertex for skinning it stores weights per bone and the bone I\-Ds corresponding to the weights usually the number of weights per bone is limited to 4 for standard use. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+the commonly used struct data types stored here to access between classes \begin{DoxyAuthor}{Author}
+Prethish Bhasuran 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+12/9/14 
+\end{DoxyDate}

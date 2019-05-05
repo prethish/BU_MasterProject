@@ -1,0 +1,63 @@
+\hypertarget{_skin_deformer_8h}{\section{/home/prethish/\-Coding/\-Thesis\-\_\-new/\-L\-B\-Skin/include/\-Skin\-Deformer.h File Reference}
+\label{_skin_deformer_8h}\index{/home/prethish/\-Coding/\-Thesis\-\_\-new/\-L\-B\-Skin/include/\-Skin\-Deformer.\-h@{/home/prethish/\-Coding/\-Thesis\-\_\-new/\-L\-B\-Skin/include/\-Skin\-Deformer.\-h}}
+}
+
+
+the main \hyperlink{class_skin_deformer}{Skin\-Deformer} class that deforms the mesh based on the skinning algorithm used  
+
+
+{\ttfamily \#include $<$ngl/\-Vec3.\-h$>$}\\*
+{\ttfamily \#include $<$ngl/\-Obj.\-h$>$}\\*
+{\ttfamily \#include $<$ngl/\-Mat3.\-h$>$}\\*
+{\ttfamily \#include $<$ngl/\-Vertex\-Array\-Object.\-h$>$}\\*
+{\ttfamily \#include $<$ngl/\-V\-A\-O\-Primitives.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}Scene\-Loader.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Data\-Types.\-h\char`\"{}}\\*
+Include dependency graph for Skin\-Deformer.\-h\-:
+This graph shows which files directly or indirectly include this file\-:
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_skin_deformer}{Skin\-Deformer}
+\begin{DoxyCompactList}\small\item\em it first creates and stores the vertex data from the scene data passed to it A vertex\-Array\-Object for open\-G\-L drawing is also created for the deformed mesh Based on the skinning algorithm selected the mesh is deformed \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_skin_deformer_8h_a4b1e8aa57843f5e188481e7ce3f9bba8}{Skin\-Deform\-Types} \{ \hyperlink{_skin_deformer_8h_a4b1e8aa57843f5e188481e7ce3f9bba8ab5c802797c5faeddafe25c93ac02ed58}{L\-I\-N\-E\-A\-R\-\_\-\-B\-L\-E\-N\-D}, 
+\hyperlink{_skin_deformer_8h_a4b1e8aa57843f5e188481e7ce3f9bba8a2a2a6e0a564f4b7f7bc9dadf3fa62ee6}{D\-U\-A\-L\-\_\-\-Q\-U\-A\-T\-E\-R\-N\-I\-O\-N}, 
+\hyperlink{_skin_deformer_8h_a4b1e8aa57843f5e188481e7ce3f9bba8a357bc5720d35b46676ab7dcb0322ccc2}{S\-T\-R\-E\-T\-C\-H\-\_\-\-T\-W\-I\-S\-T}
+ \}
+\begin{DoxyCompactList}\small\item\em enum desribing the different skin Algorithms \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+the main \hyperlink{class_skin_deformer}{Skin\-Deformer} class that deforms the mesh based on the skinning algorithm used \begin{DoxyAuthor}{Author}
+Prethish Bhasuran 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+12/9/14 
+\end{DoxyDate}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{_skin_deformer_8h_a4b1e8aa57843f5e188481e7ce3f9bba8}{\index{Skin\-Deformer.\-h@{Skin\-Deformer.\-h}!Skin\-Deform\-Types@{Skin\-Deform\-Types}}
+\index{Skin\-Deform\-Types@{Skin\-Deform\-Types}!SkinDeformer.h@{Skin\-Deformer.\-h}}
+\subsubsection[{Skin\-Deform\-Types}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Skin\-Deform\-Types}}}\label{_skin_deformer_8h_a4b1e8aa57843f5e188481e7ce3f9bba8}
+
+
+enum desribing the different skin Algorithms 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{L\-I\-N\-E\-A\-R\-\_\-\-B\-L\-E\-N\-D@{L\-I\-N\-E\-A\-R\-\_\-\-B\-L\-E\-N\-D}!Skin\-Deformer.\-h@{Skin\-Deformer.\-h}}\index{Skin\-Deformer.\-h@{Skin\-Deformer.\-h}!L\-I\-N\-E\-A\-R\-\_\-\-B\-L\-E\-N\-D@{L\-I\-N\-E\-A\-R\-\_\-\-B\-L\-E\-N\-D}}\item[{\em 
+\hypertarget{_skin_deformer_8h_a4b1e8aa57843f5e188481e7ce3f9bba8ab5c802797c5faeddafe25c93ac02ed58}{L\-I\-N\-E\-A\-R\-\_\-\-B\-L\-E\-N\-D}\label{_skin_deformer_8h_a4b1e8aa57843f5e188481e7ce3f9bba8ab5c802797c5faeddafe25c93ac02ed58}
+}]\index{D\-U\-A\-L\-\_\-\-Q\-U\-A\-T\-E\-R\-N\-I\-O\-N@{D\-U\-A\-L\-\_\-\-Q\-U\-A\-T\-E\-R\-N\-I\-O\-N}!Skin\-Deformer.\-h@{Skin\-Deformer.\-h}}\index{Skin\-Deformer.\-h@{Skin\-Deformer.\-h}!D\-U\-A\-L\-\_\-\-Q\-U\-A\-T\-E\-R\-N\-I\-O\-N@{D\-U\-A\-L\-\_\-\-Q\-U\-A\-T\-E\-R\-N\-I\-O\-N}}\item[{\em 
+\hypertarget{_skin_deformer_8h_a4b1e8aa57843f5e188481e7ce3f9bba8a2a2a6e0a564f4b7f7bc9dadf3fa62ee6}{D\-U\-A\-L\-\_\-\-Q\-U\-A\-T\-E\-R\-N\-I\-O\-N}\label{_skin_deformer_8h_a4b1e8aa57843f5e188481e7ce3f9bba8a2a2a6e0a564f4b7f7bc9dadf3fa62ee6}
+}]\index{S\-T\-R\-E\-T\-C\-H\-\_\-\-T\-W\-I\-S\-T@{S\-T\-R\-E\-T\-C\-H\-\_\-\-T\-W\-I\-S\-T}!Skin\-Deformer.\-h@{Skin\-Deformer.\-h}}\index{Skin\-Deformer.\-h@{Skin\-Deformer.\-h}!S\-T\-R\-E\-T\-C\-H\-\_\-\-T\-W\-I\-S\-T@{S\-T\-R\-E\-T\-C\-H\-\_\-\-T\-W\-I\-S\-T}}\item[{\em 
+\hypertarget{_skin_deformer_8h_a4b1e8aa57843f5e188481e7ce3f9bba8a357bc5720d35b46676ab7dcb0322ccc2}{S\-T\-R\-E\-T\-C\-H\-\_\-\-T\-W\-I\-S\-T}\label{_skin_deformer_8h_a4b1e8aa57843f5e188481e7ce3f9bba8a357bc5720d35b46676ab7dcb0322ccc2}
+}]\end{description}
+\end{Desc}

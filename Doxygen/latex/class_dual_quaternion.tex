@@ -1,0 +1,756 @@
+\hypertarget{class_dual_quaternion}{\section{Dual\-Quaternion Class Reference}
+\label{class_dual_quaternion}\index{Dual\-Quaternion@{Dual\-Quaternion}}
+}
+
+
+it uses N\-G\-L\-::\-Quaternion class to repersent the real and dual parts of a \hyperlink{class_dual_quaternion}{Dual\-Quaternion} a Dual quaternion is made of 2 quaternions,it uses Dual number arthematic a \hyperlink{class_dual_quaternion}{Dual\-Quaternion} q=qr+\-E.qd-\/ where E is dual coeficiant with property E$\ast$\-E=0, -\/where(m\-\_\-real) qr=real quaternion part which is usually used to represent rotation default value is \mbox{[}0,0,0,1\mbox{]} since the nql\-::\-Quaternion representation is \mbox{[}x,y,z,w\mbox{]} -\/where(m\-\_\-dual) qd=dual quaternion part which is usually used to represent translation or a point default value is \mbox{[}0,0,0,0\mbox{]} since the nql\-::\-Quaternion representation is \mbox{[}x,y,z.\-w\mbox{]} since it uses quaternions many of its arthematic properties are similar to Quaternions Note\-:1.\-Dual\-Quaterions works only on rigid transforms,so using a non rigid transform affine matrix( with scalling)  
+
+
+
+
+{\ttfamily \#include $<$Dualquaternion.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_dual_quaternion_aff76abcae3e1e0ecadb307a89faa7a3c}{Dual\-Quaternion} ()
+\begin{DoxyCompactList}\small\item\em Default constructor which sets the default values. \end{DoxyCompactList}\item 
+\hyperlink{class_dual_quaternion_aee110100fa0f143ebb5355319b855e9f}{Dual\-Quaternion} (const ngl\-::\-Mat4 \-\_\-m)
+\begin{DoxyCompactList}\small\item\em constructor to create a dual Quaternion from a N\-G\-L\-::\-Mat4 matrix it uses the N\-G\-L\-::\-Quaternion class to extract the rotation while the translation is just a copy of the matrix number at 30,31,32 of the matrix \end{DoxyCompactList}\item 
+\hyperlink{class_dual_quaternion_a58aa74a1752233a50b23411f328c09ce}{Dual\-Quaternion} (ngl\-::\-Quaternion \-\_\-real, ngl\-::\-Quaternion \-\_\-dual)
+\begin{DoxyCompactList}\small\item\em constructor for \hyperlink{class_dual_quaternion}{Dual\-Quaternion} from real and dual qauternion parts \end{DoxyCompactList}\item 
+\hyperlink{class_dual_quaternion_a6a50baa2c818f4d37c91bc68bdb80605}{Dual\-Quaternion} (const \hyperlink{class_dual_quaternion}{Dual\-Quaternion} \&\-\_\-dq)
+\begin{DoxyCompactList}\small\item\em copy constructor for \hyperlink{class_dual_quaternion}{Dual\-Quaternion} from another \hyperlink{class_dual_quaternion}{Dual\-Quaternion} \end{DoxyCompactList}\item 
+\hyperlink{class_dual_quaternion_a87368eaa09b0875d186cb04b8ba4575b}{$\sim$\-Dual\-Quaternion} ()
+\begin{DoxyCompactList}\small\item\em destructor there are no pointer variables used,so left empty \end{DoxyCompactList}\item 
+void \hyperlink{class_dual_quaternion_a4afc472e16b56beb91be86db20687871}{set\-Identity} ()
+\begin{DoxyCompactList}\small\item\em function to set a \hyperlink{class_dual_quaternion}{Dual\-Quaternion} to default value Note\-:using this for skinning operation as the default value of the Total transformation-\/ -\/for Total\-Dual\-Quaternion=weight1$\ast$\-Dual\-Quaternion1 + weight2$\ast$\-Dual\-Quaternion2 -\/will cause E\-R\-R\-O\-R, the final transformations will be multiplied by half its value -\/using set\-Null is recomended instead. However it is used when \hyperlink{class_dual_quaternion}{Dual\-Quaternion} are concantanated for Total\-Dual\-Quaternion=Dual\-Quaternion1 $\ast$ Dual\-Quaternion2 \end{DoxyCompactList}\item 
+void \hyperlink{class_dual_quaternion_a70fbf1890652f2d288370dfa057b50ad}{set\-Null} ()
+\begin{DoxyCompactList}\small\item\em function to set a \hyperlink{class_dual_quaternion}{Dual\-Quaternion} to complete zeros,it is used when quaternions needs to added together for skinning equations -\/for Total\-Dual\-Quaternion=weight1$\ast$\-Dual\-Quaternion1 + weight2$\ast$\-Dual\-Quaternion2 \end{DoxyCompactList}\item 
+void \hyperlink{class_dual_quaternion_a9fca08294ddcb6c7640dd9aa314b6517}{set\-Real} (ngl\-::\-Quaternion \-\_\-r)
+\begin{DoxyCompactList}\small\item\em mutator to set the real part \end{DoxyCompactList}\item 
+void \hyperlink{class_dual_quaternion_ac46b1a9cc107547dcde4a40f61feb3c7}{set\-Dual} (ngl\-::\-Quaternion \-\_\-d)
+\begin{DoxyCompactList}\small\item\em mutator to set the dual part \end{DoxyCompactList}\item 
+void \hyperlink{class_dual_quaternion_a03af608a88436b25c7eea9acbfe9b72f}{set\-Point} (ngl\-::\-Vec3 \-\_\-point)
+\begin{DoxyCompactList}\small\item\em mutator to set the Dual Quaternion to represent a point the real part will be \mbox{[}1,0,0,0\mbox{]} while the dual part will be \mbox{[}0,tx,ty,tz\mbox{]} it is used for calculations to transform a point \end{DoxyCompactList}\item 
+void \hyperlink{class_dual_quaternion_afddda19f44d7dad400833a791e03ae87}{set\-Rotation\-Translate} (ngl\-::\-Quaternion \-\_\-r, ngl\-::\-Quaternion \-\_\-t)
+\begin{DoxyCompactList}\small\item\em set the \hyperlink{class_dual_quaternion}{Dual\-Quaternion} to represent a rigid transformation here it is important that both of them are set at the same time because the translation part depends on the value of the rotation more is explained in class notes above \end{DoxyCompactList}\item 
+void \hyperlink{class_dual_quaternion_ad0e3f4d58c0f95a7fbc7b29b978dc29b}{set\-Rotation\-Translate} (ngl\-::\-Quaternion \-\_\-r, ngl\-::\-Vec3 \-\_\-t)
+\begin{DoxyCompactList}\small\item\em set the \hyperlink{class_dual_quaternion}{Dual\-Quaternion} to represent a rigid transformation \end{DoxyCompactList}\item 
+void \hyperlink{class_dual_quaternion_afce9ec6224704171e39d5655f32011b7}{set\-Rotation\-Translate} (ngl\-::\-Vec3 \-\_\-r\-Euler, ngl\-::\-Vec3 \-\_\-t)
+\begin{DoxyCompactList}\small\item\em set the \hyperlink{class_dual_quaternion}{Dual\-Quaternion} to represent a rigid transformation \end{DoxyCompactList}\item 
+ngl\-::\-Quaternion \hyperlink{class_dual_quaternion_a5f1476b36b004a94e53b9d60b668b50c}{get\-Dual} () const 
+\begin{DoxyCompactList}\small\item\em accessor to get the dual part \end{DoxyCompactList}\item 
+ngl\-::\-Quaternion \hyperlink{class_dual_quaternion_a0db2c4b45e2b835ee9f3390345d584fe}{get\-Real} () const 
+\begin{DoxyCompactList}\small\item\em accessor to get the dual part \end{DoxyCompactList}\item 
+ngl\-::\-Quaternion \hyperlink{class_dual_quaternion_a3c132edecb50d9a8e111022fd3a442cb}{get\-Rotation} () const 
+\begin{DoxyCompactList}\small\item\em get quaternion rotation \end{DoxyCompactList}\item 
+ngl\-::\-Vec3 \hyperlink{class_dual_quaternion_a2b65019291107aaaabcab8e12ba394ee}{get\-Translation} () const 
+\begin{DoxyCompactList}\small\item\em get translation from a rigid transformation Dual\-Quaternions are not commutative,ie R$\ast$\-T is not equal to T$\ast$\-R here the equation for getting the translation=2$\ast$dual$\ast$real\-Conjugate more in class notes above \end{DoxyCompactList}\item 
+\hyperlink{class_dual_quaternion}{Dual\-Quaternion} \hyperlink{class_dual_quaternion_a3ec0af73f341db69ce5537940a0627df}{operator+} (const \hyperlink{class_dual_quaternion}{Dual\-Quaternion} \-\_\-dq) const 
+\begin{DoxyCompactList}\small\item\em overloaded operator + to get the result of addition if q1=qr1+\-Eqd1 and q2=qr1+\-Eqd1 then q1+q2=(qr1+qr2)+\-E(qd1+qd2) \end{DoxyCompactList}\item 
+void \hyperlink{class_dual_quaternion_af37ee1d741348be9064f3d22704d0876}{operator+=} (const \hyperlink{class_dual_quaternion}{Dual\-Quaternion} \-\_\-dq)
+\begin{DoxyCompactList}\small\item\em overloaded += operator to add a \hyperlink{class_dual_quaternion}{Dual\-Quaternion} to itself \end{DoxyCompactList}\item 
+\hyperlink{class_dual_quaternion}{Dual\-Quaternion} \hyperlink{class_dual_quaternion_accc2f631327326f3edb269ca21cbea40}{operator-\/} (const \hyperlink{class_dual_quaternion}{Dual\-Quaternion} \-\_\-dq) const 
+\begin{DoxyCompactList}\small\item\em overloaded operator -\/ to get the result of subtraction if q1=qr1+\-Eqd1 and q2=qr1+\-Eqd1 then q1-\/q2=(qr1-\/qr2)+\-E(qd1-\/qd2) \end{DoxyCompactList}\item 
+void \hyperlink{class_dual_quaternion_a64408fa2d0faa4b2be5b01de8e15b2b2}{operator-\/=} (const \hyperlink{class_dual_quaternion}{Dual\-Quaternion} \-\_\-dq)
+\begin{DoxyCompactList}\small\item\em overloaded -\/= operator to subtract a \hyperlink{class_dual_quaternion}{Dual\-Quaternion} to itself \end{DoxyCompactList}\item 
+\hyperlink{class_dual_quaternion}{Dual\-Quaternion} \hyperlink{class_dual_quaternion_ab86045cf73a44fb12e163d56eba859ce}{operator$\ast$} (const \hyperlink{class_dual_quaternion}{Dual\-Quaternion} \-\_\-dq) const 
+\begin{DoxyCompactList}\small\item\em overloaded operator $\ast$ to get the result of multiplication if q1=qr1+\-Eqd1 and q2=qr1+\-Eqd1 then q1$\ast$q2=(qr1$\ast$qr2)+\-E(qr1 $\ast$ qd2 + qd1 $\ast$ qr2) \end{DoxyCompactList}\item 
+void \hyperlink{class_dual_quaternion_abb647d6995084ccf963d80cbdd13f051}{operator$\ast$=} (const \hyperlink{class_dual_quaternion}{Dual\-Quaternion} \-\_\-dq)
+\begin{DoxyCompactList}\small\item\em overloaded $\ast$= operator to multiply a \hyperlink{class_dual_quaternion}{Dual\-Quaternion} to itself \end{DoxyCompactList}\item 
+\hyperlink{class_dual_quaternion}{Dual\-Quaternion} \hyperlink{class_dual_quaternion_ac7d2a27162a9c34d6cad26793bab29b2}{operator$\ast$} (ngl\-::\-Real \-\_\-r)
+\begin{DoxyCompactList}\small\item\em overloaded operator $\ast$ to get the result of multiplication with a scalar if q1=qr1+\-Eqd1 and S is the scalar number then q1$\ast$\-S=(qr1$\ast$\-S)+\-E(qd2$\ast$\-S) \end{DoxyCompactList}\item 
+void \hyperlink{class_dual_quaternion_ab841ff4a7145b103ecb4f0bf7b23fa00}{operator$\ast$=} (ngl\-::\-Real \-\_\-r)
+\begin{DoxyCompactList}\small\item\em overloaded $\ast$= operator to multiply a scalar to itself \end{DoxyCompactList}\item 
+void \hyperlink{class_dual_quaternion_ad91de43de8c0f20e69e0f6c404717c58}{operator-\/} ()
+\begin{DoxyCompactList}\small\item\em overlaoded operator-\/ to multiply by -\/1 to itslef \end{DoxyCompactList}\item 
+\hyperlink{class_dual_quaternion}{Dual\-Quaternion} \hyperlink{class_dual_quaternion_a74dbe0263cb9705542df3cf994d80ba7}{operator-\/} () const 
+\item 
+\hyperlink{class_dual_quaternion}{Dual\-Quaternion} \hyperlink{class_dual_quaternion_addf33a15fb234f0645238f0654525bf5}{conjugate} ()
+\begin{DoxyCompactList}\small\item\em get the conjugate of a dual quaternion there are multitple definitions of conjugate 1.\-qr\-Conjugate+\-E.qd\-Conjugate 2.\-qr-\/\-E.\-qd 3.\-qr\-Conjugate-\/\-E.\-qd\-Conjugate here the 3rd definition is implemented since it is the one used for transforming a point Refer \href{http://www.euclideanspace.com/maths/algebra/realNormedAlgebra/other/dualQuaternion/functions/index.htm}{\tt http\-://www.\-euclideanspace.\-com/maths/algebra/real\-Normed\-Algebra/other/dual\-Quaternion/functions/index.\-htm} \end{DoxyCompactList}\item 
+void \hyperlink{class_dual_quaternion_a26e134694c5a2bc88ed01c3b33999cb2}{normalize} ()
+\begin{DoxyCompactList}\small\item\em converts to a U\-N\-I\-T \hyperlink{class_dual_quaternion}{Dual\-Quaternion} \end{DoxyCompactList}\item 
+bool \hyperlink{class_dual_quaternion_ad152ae76ed2edb035af320f88052873e}{is\-Normalized} ()
+\begin{DoxyCompactList}\small\item\em checks if a \hyperlink{class_dual_quaternion}{Dual\-Quaternion} is U\-N\-I\-T or not for any U\-N\-I\-T \hyperlink{class_dual_quaternion}{Dual\-Quaternion}\-: qr\-Conjugate$\ast$qd+qd\-Conjugate()$\ast$qr==0 \end{DoxyCompactList}\item 
+ngl\-::\-Real \hyperlink{class_dual_quaternion_aad8fbdc4d9eab19d7971dc6aef306558}{magnitude} ()
+\begin{DoxyCompactList}\small\item\em calculates the magnitude it is sqrt(qr.\-x$\ast$qr.x+qr.y$\ast$qr.y+qr.z$\ast$qr.z+qr.w$\ast$qr.w) \end{DoxyCompactList}\item 
+ngl\-::\-Mat4 \hyperlink{class_dual_quaternion_abce89499fc871e4a26bf34e148d2ae2e}{to\-Matrix} () const 
+\begin{DoxyCompactList}\small\item\em converts a \hyperlink{class_dual_quaternion}{Dual\-Quaternion} to affine Matrix4x4 the rotation matrix is derived using equation while the translation is just using get\-Translation to get the translation and set matrix numbers m\-\_\-30,m\-\_\-31,m\-\_\-32 \end{DoxyCompactList}\item 
+void \hyperlink{class_dual_quaternion_a47e44768493e8bc9a0392a16c4be875c}{from\-Matrix} (ngl\-::\-Mat4 \-\_\-m)
+\begin{DoxyCompactList}\small\item\em function to set the dual Quaternion from a N\-G\-L\-::\-Mat4 matrix it uses the N\-G\-L\-::\-Quaternion class to extract the rotation while the translation is just a copy of the matrix number at 30,31,32 of the matrix \end{DoxyCompactList}\item 
+ngl\-::\-Vec3 \hyperlink{class_dual_quaternion_ae2133762f1c26ed218dd86a6398f85c2}{transform\-Point} (ngl\-::\-Vec3 \-\_\-p)
+\begin{DoxyCompactList}\small\item\em transform a point using the current \hyperlink{class_dual_quaternion}{Dual\-Quaternion} to transform it uses the sandwidtch product to calcualte it ie transformed\-Point=Dual\-Quaternion$\ast$point$\ast$\-Dual\-Quaternion\-Conjugate \end{DoxyCompactList}\item 
+ngl\-::\-Real \hyperlink{class_dual_quaternion_a6038ccbe49ab17a097cd52384e57cbf8}{quaternion\-Dot} (ngl\-::\-Quaternion \-\_\-p, ngl\-::\-Quaternion \-\_\-q)
+\begin{DoxyCompactList}\small\item\em used for calculation simplicity for any quaternion q dot=q.\-x$\ast$q.x+q.y$\ast$q.y+q.z$\ast$q.z+q.w$\ast$q.w \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_dual_quaternion_a8a14408f01c9da8ec20dabac59a97b8c}{set\-Rotation} (ngl\-::\-Quaternion \-\_\-r)
+\begin{DoxyCompactList}\small\item\em set the rotation for rigid transformation \end{DoxyCompactList}\item 
+void \hyperlink{class_dual_quaternion_a61868486ece4aaf421a704cc5d64b864}{set\-Rotation\-Euler} (ngl\-::\-Vec3 \-\_\-r)
+\begin{DoxyCompactList}\small\item\em set the rotation for rigid transformation \end{DoxyCompactList}\item 
+void \hyperlink{class_dual_quaternion_ae6207b3d2927f96e8ea345a82a2f4ac6}{set\-Translation} (ngl\-::\-Quaternion \-\_\-t)
+\begin{DoxyCompactList}\small\item\em set the translation of a rigid transform refer class notes above for equation \end{DoxyCompactList}\item 
+void \hyperlink{class_dual_quaternion_aa74be83022fe52efc89da5547c7bf22c}{set\-Translation} (ngl\-::\-Vec3 \-\_\-t)
+\begin{DoxyCompactList}\small\item\em set the translation of a rigid transform refer class notes above for equation \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ngl\-::\-Quaternion \hyperlink{class_dual_quaternion_ac1a2af444f75c714de7500fc19481384}{m\-\_\-real}
+\begin{DoxyCompactList}\small\item\em ngl\-::\-Quaternion variable that represent the real part refer class notes above for more information \end{DoxyCompactList}\item 
+ngl\-::\-Quaternion \hyperlink{class_dual_quaternion_abe8404f60ef1426eab6d73b1c1d5616e}{m\-\_\-dual}
+\begin{DoxyCompactList}\small\item\em ngl\-::\-Quaternion variable that represent the dual part refer class notes above for more information \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+it uses N\-G\-L\-::\-Quaternion class to repersent the real and dual parts of a \hyperlink{class_dual_quaternion}{Dual\-Quaternion} a Dual quaternion is made of 2 quaternions,it uses Dual number arthematic a \hyperlink{class_dual_quaternion}{Dual\-Quaternion} q=qr+\-E.qd-\/ where E is dual coeficiant with property E$\ast$\-E=0, -\/where(m\-\_\-real) qr=real quaternion part which is usually used to represent rotation default value is \mbox{[}0,0,0,1\mbox{]} since the nql\-::\-Quaternion representation is \mbox{[}x,y,z,w\mbox{]} -\/where(m\-\_\-dual) qd=dual quaternion part which is usually used to represent translation or a point default value is \mbox{[}0,0,0,0\mbox{]} since the nql\-::\-Quaternion representation is \mbox{[}x,y,z.\-w\mbox{]} since it uses quaternions many of its arthematic properties are similar to Quaternions Note\-:1.\-Dual\-Quaterions works only on rigid transforms,so using a non rigid transform affine matrix( with scalling) 
+
+
+\begin{DoxyItemize}
+\item will give the wrong result 2.\-Dual\-Quaternions are not Commutative ie,R$\ast$\-T is N\-O\-T= T$\ast$\-R 3.\-A \hyperlink{class_dual_quaternion}{Dual\-Quaternion} represents Translation when qr=\mbox{[}1,0,0,0\mbox{]} and qd=\mbox{[}0,tx/2,ty/2,tz/2\mbox{]} 4.\-A \hyperlink{class_dual_quaternion}{Dual\-Quaternion} represents Rotation when qr=rotation Quaternion and qd=\mbox{[}0,0,0,0\mbox{]} 5.\-A \hyperlink{class_dual_quaternion}{Dual\-Quaternion} represents a rigid transform when -\/case1. Rotation then Translation --\hyperlink{class_dual_quaternion}{Dual\-Quaternion}=Rotation Dual\-Quaternion$\ast$\-Translation \hyperlink{class_dual_quaternion}{Dual\-Quaternion} --=Rotation\-Quaternion+\-E$\ast$1/2$\ast$\-Rotation\-Quaternion$\ast$\-Translation\-Quaternion -\/case2.\-Translation then Rotation-\/this is not used here --Please Refer \href{http://www.euclideanspace.com/maths/algebra/realNormedAlgebra/other/dualQuaternion/MJBDualQuaternions.pdf}{\tt http\-://www.\-euclideanspace.\-com/maths/algebra/real\-Normed\-Algebra/other/dual\-Quaternion/\-M\-J\-B\-Dual\-Quaternions.\-pdf} --for more detailed information -\/this is the reason why set\-Translation fucntion sets dual part(m\-\_\-dual)=1/2$\ast$real$\ast$dual -\/and get\-Translation returns translation by translation=2$\ast$dual$\ast$real\-Conjugate 
+\end{DoxyItemize}
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_dual_quaternion_aff76abcae3e1e0ecadb307a89faa7a3c}{\index{Dual\-Quaternion@{Dual\-Quaternion}!Dual\-Quaternion@{Dual\-Quaternion}}
+\index{Dual\-Quaternion@{Dual\-Quaternion}!DualQuaternion@{Dual\-Quaternion}}
+\subsubsection[{Dual\-Quaternion}]{\setlength{\rightskip}{0pt plus 5cm}Dual\-Quaternion\-::\-Dual\-Quaternion (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_dual_quaternion_aff76abcae3e1e0ecadb307a89faa7a3c}
+
+
+Default constructor which sets the default values. 
+
+\hypertarget{class_dual_quaternion_aee110100fa0f143ebb5355319b855e9f}{\index{Dual\-Quaternion@{Dual\-Quaternion}!Dual\-Quaternion@{Dual\-Quaternion}}
+\index{Dual\-Quaternion@{Dual\-Quaternion}!DualQuaternion@{Dual\-Quaternion}}
+\subsubsection[{Dual\-Quaternion}]{\setlength{\rightskip}{0pt plus 5cm}Dual\-Quaternion\-::\-Dual\-Quaternion (
+\begin{DoxyParamCaption}
+\item[{const ngl\-::\-Mat4}]{\-\_\-m}
+\end{DoxyParamCaption}
+)}}\label{class_dual_quaternion_aee110100fa0f143ebb5355319b855e9f}
+
+
+constructor to create a dual Quaternion from a N\-G\-L\-::\-Mat4 matrix it uses the N\-G\-L\-::\-Quaternion class to extract the rotation while the translation is just a copy of the matrix number at 30,31,32 of the matrix 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \-\_\-m} & ngl\-::mat4 rigid affine transform matrix \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_dual_quaternion_a58aa74a1752233a50b23411f328c09ce}{\index{Dual\-Quaternion@{Dual\-Quaternion}!Dual\-Quaternion@{Dual\-Quaternion}}
+\index{Dual\-Quaternion@{Dual\-Quaternion}!DualQuaternion@{Dual\-Quaternion}}
+\subsubsection[{Dual\-Quaternion}]{\setlength{\rightskip}{0pt plus 5cm}Dual\-Quaternion\-::\-Dual\-Quaternion (
+\begin{DoxyParamCaption}
+\item[{ngl\-::\-Quaternion}]{\-\_\-real, }
+\item[{ngl\-::\-Quaternion}]{\-\_\-dual}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_dual_quaternion_a58aa74a1752233a50b23411f328c09ce}
+
+
+constructor for \hyperlink{class_dual_quaternion}{Dual\-Quaternion} from real and dual qauternion parts 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \-\_\-real} & ngl\-::\-Quaternion Real part \\
+\hline
+\mbox{\tt in}  & {\em \-\_\-dual} & ngl\-::\-Quaternion Dual part \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_dual_quaternion_a6a50baa2c818f4d37c91bc68bdb80605}{\index{Dual\-Quaternion@{Dual\-Quaternion}!Dual\-Quaternion@{Dual\-Quaternion}}
+\index{Dual\-Quaternion@{Dual\-Quaternion}!DualQuaternion@{Dual\-Quaternion}}
+\subsubsection[{Dual\-Quaternion}]{\setlength{\rightskip}{0pt plus 5cm}Dual\-Quaternion\-::\-Dual\-Quaternion (
+\begin{DoxyParamCaption}
+\item[{const {\bf Dual\-Quaternion} \&}]{\-\_\-dq}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_dual_quaternion_a6a50baa2c818f4d37c91bc68bdb80605}
+
+
+copy constructor for \hyperlink{class_dual_quaternion}{Dual\-Quaternion} from another \hyperlink{class_dual_quaternion}{Dual\-Quaternion} 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \-\_\-dq} & ngl\-::\-Quaternion to copy from \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_dual_quaternion_a87368eaa09b0875d186cb04b8ba4575b}{\index{Dual\-Quaternion@{Dual\-Quaternion}!$\sim$\-Dual\-Quaternion@{$\sim$\-Dual\-Quaternion}}
+\index{$\sim$\-Dual\-Quaternion@{$\sim$\-Dual\-Quaternion}!DualQuaternion@{Dual\-Quaternion}}
+\subsubsection[{$\sim$\-Dual\-Quaternion}]{\setlength{\rightskip}{0pt plus 5cm}Dual\-Quaternion\-::$\sim$\-Dual\-Quaternion (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_dual_quaternion_a87368eaa09b0875d186cb04b8ba4575b}
+
+
+destructor there are no pointer variables used,so left empty 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_dual_quaternion_addf33a15fb234f0645238f0654525bf5}{\index{Dual\-Quaternion@{Dual\-Quaternion}!conjugate@{conjugate}}
+\index{conjugate@{conjugate}!DualQuaternion@{Dual\-Quaternion}}
+\subsubsection[{conjugate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dual\-Quaternion} Dual\-Quaternion\-::conjugate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_dual_quaternion_addf33a15fb234f0645238f0654525bf5}
+
+
+get the conjugate of a dual quaternion there are multitple definitions of conjugate 1.\-qr\-Conjugate+\-E.qd\-Conjugate 2.\-qr-\/\-E.\-qd 3.\-qr\-Conjugate-\/\-E.\-qd\-Conjugate here the 3rd definition is implemented since it is the one used for transforming a point Refer \href{http://www.euclideanspace.com/maths/algebra/realNormedAlgebra/other/dualQuaternion/functions/index.htm}{\tt http\-://www.\-euclideanspace.\-com/maths/algebra/real\-Normed\-Algebra/other/dual\-Quaternion/functions/index.\-htm} 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em \hyperlink{class_dual_quaternion}{Dual\-Quaternion}} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_dual_quaternion_a47e44768493e8bc9a0392a16c4be875c}{\index{Dual\-Quaternion@{Dual\-Quaternion}!from\-Matrix@{from\-Matrix}}
+\index{from\-Matrix@{from\-Matrix}!DualQuaternion@{Dual\-Quaternion}}
+\subsubsection[{from\-Matrix}]{\setlength{\rightskip}{0pt plus 5cm}void Dual\-Quaternion\-::from\-Matrix (
+\begin{DoxyParamCaption}
+\item[{ngl\-::\-Mat4}]{\-\_\-m}
+\end{DoxyParamCaption}
+)}}\label{class_dual_quaternion_a47e44768493e8bc9a0392a16c4be875c}
+
+
+function to set the dual Quaternion from a N\-G\-L\-::\-Mat4 matrix it uses the N\-G\-L\-::\-Quaternion class to extract the rotation while the translation is just a copy of the matrix number at 30,31,32 of the matrix 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \-\_\-m} & ngl\-::mat4 rigid affine transform matrix \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_dual_quaternion_a5f1476b36b004a94e53b9d60b668b50c}{\index{Dual\-Quaternion@{Dual\-Quaternion}!get\-Dual@{get\-Dual}}
+\index{get\-Dual@{get\-Dual}!DualQuaternion@{Dual\-Quaternion}}
+\subsubsection[{get\-Dual}]{\setlength{\rightskip}{0pt plus 5cm}ngl\-::\-Quaternion Dual\-Quaternion\-::get\-Dual (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_dual_quaternion_a5f1476b36b004a94e53b9d60b668b50c}
+
+
+accessor to get the dual part 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em ngl\-::\-Quaternion} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_dual_quaternion_a0db2c4b45e2b835ee9f3390345d584fe}{\index{Dual\-Quaternion@{Dual\-Quaternion}!get\-Real@{get\-Real}}
+\index{get\-Real@{get\-Real}!DualQuaternion@{Dual\-Quaternion}}
+\subsubsection[{get\-Real}]{\setlength{\rightskip}{0pt plus 5cm}ngl\-::\-Quaternion Dual\-Quaternion\-::get\-Real (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_dual_quaternion_a0db2c4b45e2b835ee9f3390345d584fe}
+
+
+accessor to get the dual part 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em ngl\-::\-Quaternion} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_dual_quaternion_a3c132edecb50d9a8e111022fd3a442cb}{\index{Dual\-Quaternion@{Dual\-Quaternion}!get\-Rotation@{get\-Rotation}}
+\index{get\-Rotation@{get\-Rotation}!DualQuaternion@{Dual\-Quaternion}}
+\subsubsection[{get\-Rotation}]{\setlength{\rightskip}{0pt plus 5cm}ngl\-::\-Quaternion Dual\-Quaternion\-::get\-Rotation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_dual_quaternion_a3c132edecb50d9a8e111022fd3a442cb}
+
+
+get quaternion rotation 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em ngl\-::\-Quaternion} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_dual_quaternion_a2b65019291107aaaabcab8e12ba394ee}{\index{Dual\-Quaternion@{Dual\-Quaternion}!get\-Translation@{get\-Translation}}
+\index{get\-Translation@{get\-Translation}!DualQuaternion@{Dual\-Quaternion}}
+\subsubsection[{get\-Translation}]{\setlength{\rightskip}{0pt plus 5cm}ngl\-::\-Vec3 Dual\-Quaternion\-::get\-Translation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_dual_quaternion_a2b65019291107aaaabcab8e12ba394ee}
+
+
+get translation from a rigid transformation Dual\-Quaternions are not commutative,ie R$\ast$\-T is not equal to T$\ast$\-R here the equation for getting the translation=2$\ast$dual$\ast$real\-Conjugate more in class notes above 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em ngl\-::\-Vec3} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_dual_quaternion_ad152ae76ed2edb035af320f88052873e}{\index{Dual\-Quaternion@{Dual\-Quaternion}!is\-Normalized@{is\-Normalized}}
+\index{is\-Normalized@{is\-Normalized}!DualQuaternion@{Dual\-Quaternion}}
+\subsubsection[{is\-Normalized}]{\setlength{\rightskip}{0pt plus 5cm}bool Dual\-Quaternion\-::is\-Normalized (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_dual_quaternion_ad152ae76ed2edb035af320f88052873e}
+
+
+checks if a \hyperlink{class_dual_quaternion}{Dual\-Quaternion} is U\-N\-I\-T or not for any U\-N\-I\-T \hyperlink{class_dual_quaternion}{Dual\-Quaternion}\-: qr\-Conjugate$\ast$qd+qd\-Conjugate()$\ast$qr==0 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em bool} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_dual_quaternion_aad8fbdc4d9eab19d7971dc6aef306558}{\index{Dual\-Quaternion@{Dual\-Quaternion}!magnitude@{magnitude}}
+\index{magnitude@{magnitude}!DualQuaternion@{Dual\-Quaternion}}
+\subsubsection[{magnitude}]{\setlength{\rightskip}{0pt plus 5cm}ngl\-::\-Real Dual\-Quaternion\-::magnitude (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_dual_quaternion_aad8fbdc4d9eab19d7971dc6aef306558}
+
+
+calculates the magnitude it is sqrt(qr.\-x$\ast$qr.x+qr.y$\ast$qr.y+qr.z$\ast$qr.z+qr.w$\ast$qr.w) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em ngl\-::\-Real} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_dual_quaternion_a26e134694c5a2bc88ed01c3b33999cb2}{\index{Dual\-Quaternion@{Dual\-Quaternion}!normalize@{normalize}}
+\index{normalize@{normalize}!DualQuaternion@{Dual\-Quaternion}}
+\subsubsection[{normalize}]{\setlength{\rightskip}{0pt plus 5cm}void Dual\-Quaternion\-::normalize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_dual_quaternion_a26e134694c5a2bc88ed01c3b33999cb2}
+
+
+converts to a U\-N\-I\-T \hyperlink{class_dual_quaternion}{Dual\-Quaternion} 
+
+\hypertarget{class_dual_quaternion_ab86045cf73a44fb12e163d56eba859ce}{\index{Dual\-Quaternion@{Dual\-Quaternion}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!DualQuaternion@{Dual\-Quaternion}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dual\-Quaternion} Dual\-Quaternion\-::operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Dual\-Quaternion}}]{\-\_\-dq}
+\end{DoxyParamCaption}
+) const}}\label{class_dual_quaternion_ab86045cf73a44fb12e163d56eba859ce}
+
+
+overloaded operator $\ast$ to get the result of multiplication if q1=qr1+\-Eqd1 and q2=qr1+\-Eqd1 then q1$\ast$q2=(qr1$\ast$qr2)+\-E(qr1 $\ast$ qd2 + qd1 $\ast$ qr2) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \-\_\-dq} & \hyperlink{class_dual_quaternion}{Dual\-Quaternion} to add \\
+\hline
+\mbox{\tt out}  & {\em \hyperlink{class_dual_quaternion}{Dual\-Quaternion}} & Addition result \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_dual_quaternion_ac7d2a27162a9c34d6cad26793bab29b2}{\index{Dual\-Quaternion@{Dual\-Quaternion}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!DualQuaternion@{Dual\-Quaternion}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dual\-Quaternion} Dual\-Quaternion\-::operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{ngl\-::\-Real}]{\-\_\-r}
+\end{DoxyParamCaption}
+)}}\label{class_dual_quaternion_ac7d2a27162a9c34d6cad26793bab29b2}
+
+
+overloaded operator $\ast$ to get the result of multiplication with a scalar if q1=qr1+\-Eqd1 and S is the scalar number then q1$\ast$\-S=(qr1$\ast$\-S)+\-E(qd2$\ast$\-S) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \-\_\-r} & Scalar Number to multiply \\
+\hline
+\mbox{\tt out}  & {\em Scalar} & Multiplied result \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_dual_quaternion_abb647d6995084ccf963d80cbdd13f051}{\index{Dual\-Quaternion@{Dual\-Quaternion}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!DualQuaternion@{Dual\-Quaternion}}
+\subsubsection[{operator$\ast$=}]{\setlength{\rightskip}{0pt plus 5cm}void Dual\-Quaternion\-::operator$\ast$= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Dual\-Quaternion}}]{\-\_\-dq}
+\end{DoxyParamCaption}
+)}}\label{class_dual_quaternion_abb647d6995084ccf963d80cbdd13f051}
+
+
+overloaded $\ast$= operator to multiply a \hyperlink{class_dual_quaternion}{Dual\-Quaternion} to itself 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \-\_\-dq} & \hyperlink{class_dual_quaternion}{Dual\-Quaternion} to multiply \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_dual_quaternion_ab841ff4a7145b103ecb4f0bf7b23fa00}{\index{Dual\-Quaternion@{Dual\-Quaternion}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!DualQuaternion@{Dual\-Quaternion}}
+\subsubsection[{operator$\ast$=}]{\setlength{\rightskip}{0pt plus 5cm}void Dual\-Quaternion\-::operator$\ast$= (
+\begin{DoxyParamCaption}
+\item[{ngl\-::\-Real}]{\-\_\-r}
+\end{DoxyParamCaption}
+)}}\label{class_dual_quaternion_ab841ff4a7145b103ecb4f0bf7b23fa00}
+
+
+overloaded $\ast$= operator to multiply a scalar to itself 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \-\_\-r} & Scalar Number to multiply \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_dual_quaternion_a3ec0af73f341db69ce5537940a0627df}{\index{Dual\-Quaternion@{Dual\-Quaternion}!operator+@{operator+}}
+\index{operator+@{operator+}!DualQuaternion@{Dual\-Quaternion}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dual\-Quaternion} Dual\-Quaternion\-::operator+ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Dual\-Quaternion}}]{\-\_\-dq}
+\end{DoxyParamCaption}
+) const}}\label{class_dual_quaternion_a3ec0af73f341db69ce5537940a0627df}
+
+
+overloaded operator + to get the result of addition if q1=qr1+\-Eqd1 and q2=qr1+\-Eqd1 then q1+q2=(qr1+qr2)+\-E(qd1+qd2) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \-\_\-dq} & \hyperlink{class_dual_quaternion}{Dual\-Quaternion} to add \\
+\hline
+\mbox{\tt out}  & {\em \hyperlink{class_dual_quaternion}{Dual\-Quaternion}} & Addition result \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_dual_quaternion_af37ee1d741348be9064f3d22704d0876}{\index{Dual\-Quaternion@{Dual\-Quaternion}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!DualQuaternion@{Dual\-Quaternion}}
+\subsubsection[{operator+=}]{\setlength{\rightskip}{0pt plus 5cm}void Dual\-Quaternion\-::operator+= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Dual\-Quaternion}}]{\-\_\-dq}
+\end{DoxyParamCaption}
+)}}\label{class_dual_quaternion_af37ee1d741348be9064f3d22704d0876}
+
+
+overloaded += operator to add a \hyperlink{class_dual_quaternion}{Dual\-Quaternion} to itself 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \-\_\-dq} & \hyperlink{class_dual_quaternion}{Dual\-Quaternion} to add \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_dual_quaternion_accc2f631327326f3edb269ca21cbea40}{\index{Dual\-Quaternion@{Dual\-Quaternion}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!DualQuaternion@{Dual\-Quaternion}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dual\-Quaternion} Dual\-Quaternion\-::operator-\/ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Dual\-Quaternion}}]{\-\_\-dq}
+\end{DoxyParamCaption}
+) const}}\label{class_dual_quaternion_accc2f631327326f3edb269ca21cbea40}
+
+
+overloaded operator -\/ to get the result of subtraction if q1=qr1+\-Eqd1 and q2=qr1+\-Eqd1 then q1-\/q2=(qr1-\/qr2)+\-E(qd1-\/qd2) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \-\_\-dq} & \hyperlink{class_dual_quaternion}{Dual\-Quaternion} to subtract \\
+\hline
+\mbox{\tt out}  & {\em \hyperlink{class_dual_quaternion}{Dual\-Quaternion}} & Subtraction result \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_dual_quaternion_ad91de43de8c0f20e69e0f6c404717c58}{\index{Dual\-Quaternion@{Dual\-Quaternion}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!DualQuaternion@{Dual\-Quaternion}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}void Dual\-Quaternion\-::operator-\/ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_dual_quaternion_ad91de43de8c0f20e69e0f6c404717c58}
+
+
+overlaoded operator-\/ to multiply by -\/1 to itslef 
+
+\hypertarget{class_dual_quaternion_a74dbe0263cb9705542df3cf994d80ba7}{\index{Dual\-Quaternion@{Dual\-Quaternion}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!DualQuaternion@{Dual\-Quaternion}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dual\-Quaternion} Dual\-Quaternion\-::operator-\/ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_dual_quaternion_a74dbe0263cb9705542df3cf994d80ba7}
+operator-\/ to multiply by -\/1 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em \hyperlink{class_dual_quaternion}{Dual\-Quaternion}} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_dual_quaternion_a64408fa2d0faa4b2be5b01de8e15b2b2}{\index{Dual\-Quaternion@{Dual\-Quaternion}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!DualQuaternion@{Dual\-Quaternion}}
+\subsubsection[{operator-\/=}]{\setlength{\rightskip}{0pt plus 5cm}void Dual\-Quaternion\-::operator-\/= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Dual\-Quaternion}}]{\-\_\-dq}
+\end{DoxyParamCaption}
+)}}\label{class_dual_quaternion_a64408fa2d0faa4b2be5b01de8e15b2b2}
+
+
+overloaded -\/= operator to subtract a \hyperlink{class_dual_quaternion}{Dual\-Quaternion} to itself 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \-\_\-dq} & \hyperlink{class_dual_quaternion}{Dual\-Quaternion} to subtract \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_dual_quaternion_a6038ccbe49ab17a097cd52384e57cbf8}{\index{Dual\-Quaternion@{Dual\-Quaternion}!quaternion\-Dot@{quaternion\-Dot}}
+\index{quaternion\-Dot@{quaternion\-Dot}!DualQuaternion@{Dual\-Quaternion}}
+\subsubsection[{quaternion\-Dot}]{\setlength{\rightskip}{0pt plus 5cm}ngl\-::\-Real Dual\-Quaternion\-::quaternion\-Dot (
+\begin{DoxyParamCaption}
+\item[{ngl\-::\-Quaternion}]{\-\_\-p, }
+\item[{ngl\-::\-Quaternion}]{\-\_\-q}
+\end{DoxyParamCaption}
+)}}\label{class_dual_quaternion_a6038ccbe49ab17a097cd52384e57cbf8}
+
+
+used for calculation simplicity for any quaternion q dot=q.\-x$\ast$q.x+q.y$\ast$q.y+q.z$\ast$q.z+q.w$\ast$q.w 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \-\_\-p} & ngl\-::\-Quaternion \\
+\hline
+\mbox{\tt in}  & {\em \-\_\-q} & ngl\-::\-Quaternion \\
+\hline
+\mbox{\tt out}  & {\em ngl\-::\-Real} & result \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_dual_quaternion_ac46b1a9cc107547dcde4a40f61feb3c7}{\index{Dual\-Quaternion@{Dual\-Quaternion}!set\-Dual@{set\-Dual}}
+\index{set\-Dual@{set\-Dual}!DualQuaternion@{Dual\-Quaternion}}
+\subsubsection[{set\-Dual}]{\setlength{\rightskip}{0pt plus 5cm}void Dual\-Quaternion\-::set\-Dual (
+\begin{DoxyParamCaption}
+\item[{ngl\-::\-Quaternion}]{\-\_\-d}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_dual_quaternion_ac46b1a9cc107547dcde4a40f61feb3c7}
+
+
+mutator to set the dual part 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \-\_\-d} & ngl\-::\-Quaternion \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_dual_quaternion_a4afc472e16b56beb91be86db20687871}{\index{Dual\-Quaternion@{Dual\-Quaternion}!set\-Identity@{set\-Identity}}
+\index{set\-Identity@{set\-Identity}!DualQuaternion@{Dual\-Quaternion}}
+\subsubsection[{set\-Identity}]{\setlength{\rightskip}{0pt plus 5cm}void Dual\-Quaternion\-::set\-Identity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_dual_quaternion_a4afc472e16b56beb91be86db20687871}
+
+
+function to set a \hyperlink{class_dual_quaternion}{Dual\-Quaternion} to default value Note\-:using this for skinning operation as the default value of the Total transformation-\/ -\/for Total\-Dual\-Quaternion=weight1$\ast$\-Dual\-Quaternion1 + weight2$\ast$\-Dual\-Quaternion2 -\/will cause E\-R\-R\-O\-R, the final transformations will be multiplied by half its value -\/using set\-Null is recomended instead. However it is used when \hyperlink{class_dual_quaternion}{Dual\-Quaternion} are concantanated for Total\-Dual\-Quaternion=Dual\-Quaternion1 $\ast$ Dual\-Quaternion2 
+
+\hypertarget{class_dual_quaternion_a70fbf1890652f2d288370dfa057b50ad}{\index{Dual\-Quaternion@{Dual\-Quaternion}!set\-Null@{set\-Null}}
+\index{set\-Null@{set\-Null}!DualQuaternion@{Dual\-Quaternion}}
+\subsubsection[{set\-Null}]{\setlength{\rightskip}{0pt plus 5cm}void Dual\-Quaternion\-::set\-Null (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_dual_quaternion_a70fbf1890652f2d288370dfa057b50ad}
+
+
+function to set a \hyperlink{class_dual_quaternion}{Dual\-Quaternion} to complete zeros,it is used when quaternions needs to added together for skinning equations -\/for Total\-Dual\-Quaternion=weight1$\ast$\-Dual\-Quaternion1 + weight2$\ast$\-Dual\-Quaternion2 
+
+\hypertarget{class_dual_quaternion_a03af608a88436b25c7eea9acbfe9b72f}{\index{Dual\-Quaternion@{Dual\-Quaternion}!set\-Point@{set\-Point}}
+\index{set\-Point@{set\-Point}!DualQuaternion@{Dual\-Quaternion}}
+\subsubsection[{set\-Point}]{\setlength{\rightskip}{0pt plus 5cm}void Dual\-Quaternion\-::set\-Point (
+\begin{DoxyParamCaption}
+\item[{ngl\-::\-Vec3}]{\-\_\-point}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_dual_quaternion_a03af608a88436b25c7eea9acbfe9b72f}
+
+
+mutator to set the Dual Quaternion to represent a point the real part will be \mbox{[}1,0,0,0\mbox{]} while the dual part will be \mbox{[}0,tx,ty,tz\mbox{]} it is used for calculations to transform a point 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em (\-\_\-point} & ngl\-::vec3 point(x,y,z) \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_dual_quaternion_a9fca08294ddcb6c7640dd9aa314b6517}{\index{Dual\-Quaternion@{Dual\-Quaternion}!set\-Real@{set\-Real}}
+\index{set\-Real@{set\-Real}!DualQuaternion@{Dual\-Quaternion}}
+\subsubsection[{set\-Real}]{\setlength{\rightskip}{0pt plus 5cm}void Dual\-Quaternion\-::set\-Real (
+\begin{DoxyParamCaption}
+\item[{ngl\-::\-Quaternion}]{\-\_\-r}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_dual_quaternion_a9fca08294ddcb6c7640dd9aa314b6517}
+
+
+mutator to set the real part 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \-\_\-r} & ngl\-::\-Quaternion \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_dual_quaternion_a8a14408f01c9da8ec20dabac59a97b8c}{\index{Dual\-Quaternion@{Dual\-Quaternion}!set\-Rotation@{set\-Rotation}}
+\index{set\-Rotation@{set\-Rotation}!DualQuaternion@{Dual\-Quaternion}}
+\subsubsection[{set\-Rotation}]{\setlength{\rightskip}{0pt plus 5cm}void Dual\-Quaternion\-::set\-Rotation (
+\begin{DoxyParamCaption}
+\item[{ngl\-::\-Quaternion}]{\-\_\-r}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{class_dual_quaternion_a8a14408f01c9da8ec20dabac59a97b8c}
+
+
+set the rotation for rigid transformation 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \-\_\-r} & ngl\-::\-Quaternion rotation \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_dual_quaternion_a61868486ece4aaf421a704cc5d64b864}{\index{Dual\-Quaternion@{Dual\-Quaternion}!set\-Rotation\-Euler@{set\-Rotation\-Euler}}
+\index{set\-Rotation\-Euler@{set\-Rotation\-Euler}!DualQuaternion@{Dual\-Quaternion}}
+\subsubsection[{set\-Rotation\-Euler}]{\setlength{\rightskip}{0pt plus 5cm}void Dual\-Quaternion\-::set\-Rotation\-Euler (
+\begin{DoxyParamCaption}
+\item[{ngl\-::\-Vec3}]{\-\_\-r}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{class_dual_quaternion_a61868486ece4aaf421a704cc5d64b864}
+
+
+set the rotation for rigid transformation 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \-\_\-r} & Euler rotation in degrees \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_dual_quaternion_afddda19f44d7dad400833a791e03ae87}{\index{Dual\-Quaternion@{Dual\-Quaternion}!set\-Rotation\-Translate@{set\-Rotation\-Translate}}
+\index{set\-Rotation\-Translate@{set\-Rotation\-Translate}!DualQuaternion@{Dual\-Quaternion}}
+\subsubsection[{set\-Rotation\-Translate}]{\setlength{\rightskip}{0pt plus 5cm}void Dual\-Quaternion\-::set\-Rotation\-Translate (
+\begin{DoxyParamCaption}
+\item[{ngl\-::\-Quaternion}]{\-\_\-r, }
+\item[{ngl\-::\-Quaternion}]{\-\_\-t}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_dual_quaternion_afddda19f44d7dad400833a791e03ae87}
+
+
+set the \hyperlink{class_dual_quaternion}{Dual\-Quaternion} to represent a rigid transformation here it is important that both of them are set at the same time because the translation part depends on the value of the rotation more is explained in class notes above 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \-\_\-r} & ngl\-::\-Quaternion that represents Rotations \\
+\hline
+\mbox{\tt in}  & {\em \-\_\-t} & ngl\-::\-Quaternion that represents displacements \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_dual_quaternion_ad0e3f4d58c0f95a7fbc7b29b978dc29b}{\index{Dual\-Quaternion@{Dual\-Quaternion}!set\-Rotation\-Translate@{set\-Rotation\-Translate}}
+\index{set\-Rotation\-Translate@{set\-Rotation\-Translate}!DualQuaternion@{Dual\-Quaternion}}
+\subsubsection[{set\-Rotation\-Translate}]{\setlength{\rightskip}{0pt plus 5cm}void Dual\-Quaternion\-::set\-Rotation\-Translate (
+\begin{DoxyParamCaption}
+\item[{ngl\-::\-Quaternion}]{\-\_\-r, }
+\item[{ngl\-::\-Vec3}]{\-\_\-t}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_dual_quaternion_ad0e3f4d58c0f95a7fbc7b29b978dc29b}
+
+
+set the \hyperlink{class_dual_quaternion}{Dual\-Quaternion} to represent a rigid transformation 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \-\_\-r} & ngl\-::\-Quaternion that represents Rotations \\
+\hline
+\mbox{\tt in}  & {\em \-\_\-t} & ngl\-::vec3 that represents displacements \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_dual_quaternion_afce9ec6224704171e39d5655f32011b7}{\index{Dual\-Quaternion@{Dual\-Quaternion}!set\-Rotation\-Translate@{set\-Rotation\-Translate}}
+\index{set\-Rotation\-Translate@{set\-Rotation\-Translate}!DualQuaternion@{Dual\-Quaternion}}
+\subsubsection[{set\-Rotation\-Translate}]{\setlength{\rightskip}{0pt plus 5cm}void Dual\-Quaternion\-::set\-Rotation\-Translate (
+\begin{DoxyParamCaption}
+\item[{ngl\-::\-Vec3}]{\-\_\-r\-Euler, }
+\item[{ngl\-::\-Vec3}]{\-\_\-t}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_dual_quaternion_afce9ec6224704171e39d5655f32011b7}
+
+
+set the \hyperlink{class_dual_quaternion}{Dual\-Quaternion} to represent a rigid transformation 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \-\_\-r} & ngl\-::vec3 that represents euler Rotation in Degrees \\
+\hline
+\mbox{\tt in}  & {\em \-\_\-t} & ngl\-::vec3 that represents displacements \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_dual_quaternion_ae6207b3d2927f96e8ea345a82a2f4ac6}{\index{Dual\-Quaternion@{Dual\-Quaternion}!set\-Translation@{set\-Translation}}
+\index{set\-Translation@{set\-Translation}!DualQuaternion@{Dual\-Quaternion}}
+\subsubsection[{set\-Translation}]{\setlength{\rightskip}{0pt plus 5cm}void Dual\-Quaternion\-::set\-Translation (
+\begin{DoxyParamCaption}
+\item[{ngl\-::\-Quaternion}]{\-\_\-t}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{class_dual_quaternion_ae6207b3d2927f96e8ea345a82a2f4ac6}
+
+
+set the translation of a rigid transform refer class notes above for equation 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \-\_\-t} & ngl\-::\-Quaternion \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_dual_quaternion_aa74be83022fe52efc89da5547c7bf22c}{\index{Dual\-Quaternion@{Dual\-Quaternion}!set\-Translation@{set\-Translation}}
+\index{set\-Translation@{set\-Translation}!DualQuaternion@{Dual\-Quaternion}}
+\subsubsection[{set\-Translation}]{\setlength{\rightskip}{0pt plus 5cm}void Dual\-Quaternion\-::set\-Translation (
+\begin{DoxyParamCaption}
+\item[{ngl\-::\-Vec3}]{\-\_\-t}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{class_dual_quaternion_aa74be83022fe52efc89da5547c7bf22c}
+
+
+set the translation of a rigid transform refer class notes above for equation 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \-\_\-t} & ngl\-::vec3 \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_dual_quaternion_abce89499fc871e4a26bf34e148d2ae2e}{\index{Dual\-Quaternion@{Dual\-Quaternion}!to\-Matrix@{to\-Matrix}}
+\index{to\-Matrix@{to\-Matrix}!DualQuaternion@{Dual\-Quaternion}}
+\subsubsection[{to\-Matrix}]{\setlength{\rightskip}{0pt plus 5cm}ngl\-::\-Mat4 Dual\-Quaternion\-::to\-Matrix (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_dual_quaternion_abce89499fc871e4a26bf34e148d2ae2e}
+
+
+converts a \hyperlink{class_dual_quaternion}{Dual\-Quaternion} to affine Matrix4x4 the rotation matrix is derived using equation while the translation is just using get\-Translation to get the translation and set matrix numbers m\-\_\-30,m\-\_\-31,m\-\_\-32 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em ngl\-::\-Mat4} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_dual_quaternion_ae2133762f1c26ed218dd86a6398f85c2}{\index{Dual\-Quaternion@{Dual\-Quaternion}!transform\-Point@{transform\-Point}}
+\index{transform\-Point@{transform\-Point}!DualQuaternion@{Dual\-Quaternion}}
+\subsubsection[{transform\-Point}]{\setlength{\rightskip}{0pt plus 5cm}ngl\-::\-Vec3 Dual\-Quaternion\-::transform\-Point (
+\begin{DoxyParamCaption}
+\item[{ngl\-::\-Vec3}]{\-\_\-p}
+\end{DoxyParamCaption}
+)}}\label{class_dual_quaternion_ae2133762f1c26ed218dd86a6398f85c2}
+
+
+transform a point using the current \hyperlink{class_dual_quaternion}{Dual\-Quaternion} to transform it uses the sandwidtch product to calcualte it ie transformed\-Point=Dual\-Quaternion$\ast$point$\ast$\-Dual\-Quaternion\-Conjugate 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \-\_\-p} & ngl\-::\-Vec3 point to transform \\
+\hline
+\mbox{\tt out}  & {\em ngl\-::\-Vec3} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_dual_quaternion_abe8404f60ef1426eab6d73b1c1d5616e}{\index{Dual\-Quaternion@{Dual\-Quaternion}!m\-\_\-dual@{m\-\_\-dual}}
+\index{m\-\_\-dual@{m\-\_\-dual}!DualQuaternion@{Dual\-Quaternion}}
+\subsubsection[{m\-\_\-dual}]{\setlength{\rightskip}{0pt plus 5cm}ngl\-::\-Quaternion Dual\-Quaternion\-::m\-\_\-dual\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_dual_quaternion_abe8404f60ef1426eab6d73b1c1d5616e}
+
+
+ngl\-::\-Quaternion variable that represent the dual part refer class notes above for more information 
+
+\hypertarget{class_dual_quaternion_ac1a2af444f75c714de7500fc19481384}{\index{Dual\-Quaternion@{Dual\-Quaternion}!m\-\_\-real@{m\-\_\-real}}
+\index{m\-\_\-real@{m\-\_\-real}!DualQuaternion@{Dual\-Quaternion}}
+\subsubsection[{m\-\_\-real}]{\setlength{\rightskip}{0pt plus 5cm}ngl\-::\-Quaternion Dual\-Quaternion\-::m\-\_\-real\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_dual_quaternion_ac1a2af444f75c714de7500fc19481384}
+
+
+ngl\-::\-Quaternion variable that represent the real part refer class notes above for more information 
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/prethish/\-Coding/\-Thesis\-\_\-new/\-L\-B\-Skin/include/\hyperlink{_dualquaternion_8h}{Dualquaternion.\-h}\end{DoxyCompactItemize}

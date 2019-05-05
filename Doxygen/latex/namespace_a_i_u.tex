@@ -1,0 +1,153 @@
+\hypertarget{namespace_a_i_u}{\section{A\-I\-U Namespace Reference}
+\label{namespace_a_i_u}\index{A\-I\-U@{A\-I\-U}}
+}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+ngl\-::\-Mat4 \hyperlink{namespace_a_i_u_a51999c877e7faf195cbfaec3bb9cd531}{ai\-Matrix4x4\-To\-N\-G\-L\-Mat4} (const ai\-Matrix4x4 \&\-\_\-m)
+\begin{DoxyCompactList}\small\item\em converts between Assimp native Matrix format and N\-G\-L\-::matrix format \end{DoxyCompactList}\item 
+ngl\-::\-Mat4 \hyperlink{namespace_a_i_u_a1fd4d6d55704da45f1d762008982f407}{ai\-Matrix4x4\-To\-N\-G\-L\-Mat4\-Transpose} (const ai\-Matrix4x4 \&\-\_\-m)
+\begin{DoxyCompactList}\small\item\em converts between Assimp native Matrix format and N\-G\-L\-::matrix format after transposing \end{DoxyCompactList}\item 
+ngl\-::\-Vec3 \hyperlink{namespace_a_i_u_ae13de0c4e6897fdf16156c0fdb3430de}{ai\-Vector3\-D\-To\-N\-G\-L\-Vec3} (const ai\-Vector3\-D \&\-\_\-v)
+\begin{DoxyCompactList}\small\item\em converts between Assimp native vector3 format and N\-G\-L\-::vec3 format \end{DoxyCompactList}\item 
+ngl\-::\-Vec4 \hyperlink{namespace_a_i_u_a830ee88a9d40bc36b063696ef388992b}{ai\-Vector3\-D\-To\-N\-G\-L\-Vec4} (const ai\-Vector3\-D \&\-\_\-v)
+\begin{DoxyCompactList}\small\item\em converts between Assimp native vector3 format and N\-G\-L\-::vec4 format after setting vec4.\-w=1.\-0 \end{DoxyCompactList}\item 
+ngl\-::\-Vec2 \hyperlink{namespace_a_i_u_a62170c913a724cbf821ab2d0edbae052}{ai\-Vector2\-D\-To\-N\-G\-L\-Vec2} (const ai\-Vector2\-D \&\-\_\-v)
+\begin{DoxyCompactList}\small\item\em converts between Assimp native vector2 format and N\-G\-L\-::vec2 format \end{DoxyCompactList}\item 
+ngl\-::\-Quaternion \hyperlink{namespace_a_i_u_a5a0e9b6c6e335922cdfb0453e1811b67}{ai\-Quat\-To\-N\-G\-L\-Quat} (const ai\-Quaternion \&\-\_\-v)
+\begin{DoxyCompactList}\small\item\em converts between Assimp native quaternion format and N\-G\-L\-::\-Quaternion format \end{DoxyCompactList}\item 
+void \hyperlink{namespace_a_i_u_a9d2614a4a81a8e1f17015892459df95b}{get\-Scene\-Bounding\-Box} (const ai\-Scene $\ast$scene, ngl\-::\-Vec3 \&o\-\_\-min, ngl\-::\-Vec3 \&o\-\_\-max)
+\begin{DoxyCompactList}\small\item\em calculate the bounding box of the scene after looping through all the meshes \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{namespace_a_i_u_a51999c877e7faf195cbfaec3bb9cd531}{\index{A\-I\-U@{A\-I\-U}!ai\-Matrix4x4\-To\-N\-G\-L\-Mat4@{ai\-Matrix4x4\-To\-N\-G\-L\-Mat4}}
+\index{ai\-Matrix4x4\-To\-N\-G\-L\-Mat4@{ai\-Matrix4x4\-To\-N\-G\-L\-Mat4}!AIU@{A\-I\-U}}
+\subsubsection[{ai\-Matrix4x4\-To\-N\-G\-L\-Mat4}]{\setlength{\rightskip}{0pt plus 5cm}ngl\-::\-Mat4 A\-I\-U\-::ai\-Matrix4x4\-To\-N\-G\-L\-Mat4 (
+\begin{DoxyParamCaption}
+\item[{const ai\-Matrix4x4 \&}]{\-\_\-m}
+\end{DoxyParamCaption}
+)}}\label{namespace_a_i_u_a51999c877e7faf195cbfaec3bb9cd531}
+
+
+converts between Assimp native Matrix format and N\-G\-L\-::matrix format 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \-\_\-m} & Assimp Matrix \\
+\hline
+\mbox{\tt out}  & {\em ngl\-::\-Mat4} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{namespace_a_i_u_a1fd4d6d55704da45f1d762008982f407}{\index{A\-I\-U@{A\-I\-U}!ai\-Matrix4x4\-To\-N\-G\-L\-Mat4\-Transpose@{ai\-Matrix4x4\-To\-N\-G\-L\-Mat4\-Transpose}}
+\index{ai\-Matrix4x4\-To\-N\-G\-L\-Mat4\-Transpose@{ai\-Matrix4x4\-To\-N\-G\-L\-Mat4\-Transpose}!AIU@{A\-I\-U}}
+\subsubsection[{ai\-Matrix4x4\-To\-N\-G\-L\-Mat4\-Transpose}]{\setlength{\rightskip}{0pt plus 5cm}ngl\-::\-Mat4 A\-I\-U\-::ai\-Matrix4x4\-To\-N\-G\-L\-Mat4\-Transpose (
+\begin{DoxyParamCaption}
+\item[{const ai\-Matrix4x4 \&}]{\-\_\-m}
+\end{DoxyParamCaption}
+)}}\label{namespace_a_i_u_a1fd4d6d55704da45f1d762008982f407}
+
+
+converts between Assimp native Matrix format and N\-G\-L\-::matrix format after transposing 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \-\_\-m} & Assimp Matrix \\
+\hline
+\mbox{\tt out}  & {\em ngl\-::\-Mat4} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{namespace_a_i_u_a5a0e9b6c6e335922cdfb0453e1811b67}{\index{A\-I\-U@{A\-I\-U}!ai\-Quat\-To\-N\-G\-L\-Quat@{ai\-Quat\-To\-N\-G\-L\-Quat}}
+\index{ai\-Quat\-To\-N\-G\-L\-Quat@{ai\-Quat\-To\-N\-G\-L\-Quat}!AIU@{A\-I\-U}}
+\subsubsection[{ai\-Quat\-To\-N\-G\-L\-Quat}]{\setlength{\rightskip}{0pt plus 5cm}ngl\-::\-Quaternion A\-I\-U\-::ai\-Quat\-To\-N\-G\-L\-Quat (
+\begin{DoxyParamCaption}
+\item[{const ai\-Quaternion \&}]{\-\_\-v}
+\end{DoxyParamCaption}
+)}}\label{namespace_a_i_u_a5a0e9b6c6e335922cdfb0453e1811b67}
+
+
+converts between Assimp native quaternion format and N\-G\-L\-::\-Quaternion format 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \-\_\-m} & Assimp Quaternion \\
+\hline
+\mbox{\tt out}  & {\em ngl\-::\-Quaternion} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{namespace_a_i_u_a62170c913a724cbf821ab2d0edbae052}{\index{A\-I\-U@{A\-I\-U}!ai\-Vector2\-D\-To\-N\-G\-L\-Vec2@{ai\-Vector2\-D\-To\-N\-G\-L\-Vec2}}
+\index{ai\-Vector2\-D\-To\-N\-G\-L\-Vec2@{ai\-Vector2\-D\-To\-N\-G\-L\-Vec2}!AIU@{A\-I\-U}}
+\subsubsection[{ai\-Vector2\-D\-To\-N\-G\-L\-Vec2}]{\setlength{\rightskip}{0pt plus 5cm}ngl\-::\-Vec2 A\-I\-U\-::ai\-Vector2\-D\-To\-N\-G\-L\-Vec2 (
+\begin{DoxyParamCaption}
+\item[{const ai\-Vector2\-D \&}]{\-\_\-v}
+\end{DoxyParamCaption}
+)}}\label{namespace_a_i_u_a62170c913a724cbf821ab2d0edbae052}
+
+
+converts between Assimp native vector2 format and N\-G\-L\-::vec2 format 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \-\_\-m} & Assimp vector2d \\
+\hline
+\mbox{\tt out}  & {\em ngl\-::\-Vec2} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{namespace_a_i_u_ae13de0c4e6897fdf16156c0fdb3430de}{\index{A\-I\-U@{A\-I\-U}!ai\-Vector3\-D\-To\-N\-G\-L\-Vec3@{ai\-Vector3\-D\-To\-N\-G\-L\-Vec3}}
+\index{ai\-Vector3\-D\-To\-N\-G\-L\-Vec3@{ai\-Vector3\-D\-To\-N\-G\-L\-Vec3}!AIU@{A\-I\-U}}
+\subsubsection[{ai\-Vector3\-D\-To\-N\-G\-L\-Vec3}]{\setlength{\rightskip}{0pt plus 5cm}ngl\-::\-Vec3 A\-I\-U\-::ai\-Vector3\-D\-To\-N\-G\-L\-Vec3 (
+\begin{DoxyParamCaption}
+\item[{const ai\-Vector3\-D \&}]{\-\_\-v}
+\end{DoxyParamCaption}
+)}}\label{namespace_a_i_u_ae13de0c4e6897fdf16156c0fdb3430de}
+
+
+converts between Assimp native vector3 format and N\-G\-L\-::vec3 format 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \-\_\-m} & Assimp vector3d \\
+\hline
+\mbox{\tt out}  & {\em ngl\-::\-Vec3} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{namespace_a_i_u_a830ee88a9d40bc36b063696ef388992b}{\index{A\-I\-U@{A\-I\-U}!ai\-Vector3\-D\-To\-N\-G\-L\-Vec4@{ai\-Vector3\-D\-To\-N\-G\-L\-Vec4}}
+\index{ai\-Vector3\-D\-To\-N\-G\-L\-Vec4@{ai\-Vector3\-D\-To\-N\-G\-L\-Vec4}!AIU@{A\-I\-U}}
+\subsubsection[{ai\-Vector3\-D\-To\-N\-G\-L\-Vec4}]{\setlength{\rightskip}{0pt plus 5cm}ngl\-::\-Vec4 A\-I\-U\-::ai\-Vector3\-D\-To\-N\-G\-L\-Vec4 (
+\begin{DoxyParamCaption}
+\item[{const ai\-Vector3\-D \&}]{\-\_\-v}
+\end{DoxyParamCaption}
+)}}\label{namespace_a_i_u_a830ee88a9d40bc36b063696ef388992b}
+
+
+converts between Assimp native vector3 format and N\-G\-L\-::vec4 format after setting vec4.\-w=1.\-0 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \-\_\-m} & Assimp vector3d \\
+\hline
+\mbox{\tt out}  & {\em ngl\-::\-Vec4} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{namespace_a_i_u_a9d2614a4a81a8e1f17015892459df95b}{\index{A\-I\-U@{A\-I\-U}!get\-Scene\-Bounding\-Box@{get\-Scene\-Bounding\-Box}}
+\index{get\-Scene\-Bounding\-Box@{get\-Scene\-Bounding\-Box}!AIU@{A\-I\-U}}
+\subsubsection[{get\-Scene\-Bounding\-Box}]{\setlength{\rightskip}{0pt plus 5cm}void A\-I\-U\-::get\-Scene\-Bounding\-Box (
+\begin{DoxyParamCaption}
+\item[{const ai\-Scene $\ast$}]{scene, }
+\item[{ngl\-::\-Vec3 \&}]{o\-\_\-min, }
+\item[{ngl\-::\-Vec3 \&}]{o\-\_\-max}
+\end{DoxyParamCaption}
+)}}\label{namespace_a_i_u_a9d2614a4a81a8e1f17015892459df95b}
+
+
+calculate the bounding box of the scene after looping through all the meshes 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em scene} & Assimp scene data \\
+\hline
+\mbox{\tt in}  & {\em o\-\_\-min} & lower bounding box Values \\
+\hline
+\mbox{\tt in}  & {\em o\-\_\-max} & upper bounding box Values \\
+\hline
+\end{DoxyParams}

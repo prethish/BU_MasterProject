@@ -1,0 +1,285 @@
+\hypertarget{_util_8h}{\section{/home/prethish/\-Coding/\-Thesis\-\_\-new/\-L\-B\-Skin/include/\-Util.h File Reference}
+\label{_util_8h}\index{/home/prethish/\-Coding/\-Thesis\-\_\-new/\-L\-B\-Skin/include/\-Util.\-h@{/home/prethish/\-Coding/\-Thesis\-\_\-new/\-L\-B\-Skin/include/\-Util.\-h}}
+}
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$ngl/\-Vec3.\-h$>$}\\*
+{\ttfamily \#include $<$ngl/\-Vec4.\-h$>$}\\*
+{\ttfamily \#include $<$ngl/\-Mat3.\-h$>$}\\*
+{\ttfamily \#include $<$ngl/\-Mat4.\-h$>$}\\*
+{\ttfamily \#include $<$ngl/\-Util.\-h$>$}\\*
+{\ttfamily \#include $<$ngl/\-Quaternion.\-h$>$}\\*
+{\ttfamily \#include $<$ngl/\-Transformation.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}Dualquaternion.\-h\char`\"{}}\\*
+Include dependency graph for Util.\-h\-:
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+ngl\-::\-Vec3 \hyperlink{_util_8h_ac2ab5bbdee266e1b0c8a3cd9f91bb050}{Quat\-\_\-transfom\-Point} (ngl\-::\-Quaternion \-\_\-q, ngl\-::\-Vec3 \-\_\-v)
+\begin{DoxyCompactList}\small\item\em function that transforms a point using Quaternion quaternion tranformation using cross product instead q$\ast$v$\ast$q1 v1 = v + 2r × (r × v + av) where v is original point,quaternion is $<$a,r$>$ \end{DoxyCompactList}\item 
+ngl\-::\-Real \hyperlink{_util_8h_a03fcaea7c9e193cec9e7338bf3eca1f2}{Quat\-\_\-dot} (ngl\-::\-Quaternion \-\_\-p, ngl\-::\-Quaternion \-\_\-q)
+\begin{DoxyCompactList}\small\item\em used for calculation simplicity its just a multiplication of similar variables dot=x$\ast$x+y$\ast$y+z$\ast$z+w$\ast$w \end{DoxyCompactList}\item 
+void \hyperlink{_util_8h_aa8dada8f347b316ca97c0d57a3e951ac}{display\-Vec} (ngl\-::\-Vec3 \-\_\-v, std\-::string \-\_\-s=\char`\"{}V3\char`\"{})
+\begin{DoxyCompactList}\small\item\em display N\-G\-L\-::vec3 \end{DoxyCompactList}\item 
+void \hyperlink{_util_8h_a5869b099726eae81376e5f8b22470e36}{display\-Quat} (ngl\-::\-Quaternion \-\_\-q, std\-::string \-\_\-s=\char`\"{}Q4\char`\"{})
+\begin{DoxyCompactList}\small\item\em display N\-G\-L\-::\-Quaternion \end{DoxyCompactList}\item 
+void \hyperlink{_util_8h_af58af0160f03549bbb52fdea4f92eaac}{display\-Mat} (ngl\-::\-Mat3 \-\_\-m, std\-::string \-\_\-s=\char`\"{}Mat3\char`\"{})
+\begin{DoxyCompactList}\small\item\em display N\-G\-L\-::mat3 \end{DoxyCompactList}\item 
+void \hyperlink{_util_8h_ae375f579be8ff7fe9cb26cb347eec814}{display\-Mat} (ngl\-::\-Mat4 \-\_\-m, std\-::string \-\_\-s=\char`\"{}Mat4\char`\"{})
+\begin{DoxyCompactList}\small\item\em display N\-G\-L\-::mat4 \end{DoxyCompactList}\item 
+void \hyperlink{_util_8h_a974b9d9f8db11a5b4473037dbd8e90fd}{display\-Dual\-Quaternion} (\hyperlink{class_dual_quaternion}{Dual\-Quaternion} \-\_\-d, std\-::string \-\_\-s=\char`\"{}D\-Q-\/-\/\char`\"{})
+\begin{DoxyCompactList}\small\item\em display \hyperlink{class_dual_quaternion}{Dual\-Quaternion} \end{DoxyCompactList}\item 
+void \hyperlink{_util_8h_a6f810d3f1e63b8e1372f30599d0ad6e5}{get\-Translate\-Rotate} (ngl\-::\-Mat4 \-\_\-m, ngl\-::\-Mat3 \&\-\_\-r, ngl\-::\-Vec3 \&\-\_\-t)
+\begin{DoxyCompactList}\small\item\em return the rotation matrix3x3 and translate works only for rigid transforms \end{DoxyCompactList}\item 
+void \hyperlink{_util_8h_ab7aec86b3bda1b497a4f1aaa9b62ba86}{get\-Translate\-Rotate} (const ngl\-::\-Mat4 \&\-\_\-m, ngl\-::\-Quaternion \&\-\_\-r, ngl\-::\-Vec3 \&\-\_\-t)
+\begin{DoxyCompactList}\small\item\em return the rotation matrix3x3 and translate works only for rigid transforms \end{DoxyCompactList}\item 
+ngl\-::\-Vec3 \hyperlink{_util_8h_a68dbaf73278ee7354543c7e5426cb04f}{mult\-Matrix} (ngl\-::\-Vec3 \-\_\-v, ngl\-::\-Mat4 \-\_\-m, ngl\-::\-Real \-\_\-w=1.\-0f)
+\begin{DoxyCompactList}\small\item\em multiply a vec3 point with a 4x4 matrix and return the transformed point \end{DoxyCompactList}\item 
+ngl\-::\-Vec3 \hyperlink{_util_8h_a75f4c978ffb55f8b2981f81117726278}{decompose\-Rotation} (ngl\-::\-Mat4 \-\_\-m)
+\begin{DoxyCompactList}\small\item\em function to decompose rotation matrix is yaw,pitch and roll euler angles in degrees this function is not working well as the angle Y seems to be wrong on occasion \end{DoxyCompactList}\item 
+ngl\-::\-Vec3 \hyperlink{_util_8h_a95ecc4ca97a0c3864054859762daf725}{decompose\-Rotation} (ngl\-::\-Mat3 \-\_\-m)
+\begin{DoxyCompactList}\small\item\em function to decompose rotation matrix is yaw,pitch and roll euler angles in degrees this function is not working well as the angle Y seems to be wrong on occasion \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{_util_8h_a75f4c978ffb55f8b2981f81117726278}{\index{Util.\-h@{Util.\-h}!decompose\-Rotation@{decompose\-Rotation}}
+\index{decompose\-Rotation@{decompose\-Rotation}!Util.h@{Util.\-h}}
+\subsubsection[{decompose\-Rotation}]{\setlength{\rightskip}{0pt plus 5cm}ngl\-::\-Vec3 decompose\-Rotation (
+\begin{DoxyParamCaption}
+\item[{ngl\-::\-Mat4}]{\-\_\-m}
+\end{DoxyParamCaption}
+)}}\label{_util_8h_a75f4c978ffb55f8b2981f81117726278}
+
+
+function to decompose rotation matrix is yaw,pitch and roll euler angles in degrees this function is not working well as the angle Y seems to be wrong on occasion 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \-\_\-m} & mat4 rotation matrix \\
+\hline
+\mbox{\tt out}  & {\em ngl\-::\-Vec3} & Euler rotation in Degrees \\
+\hline
+\end{DoxyParams}
+\hypertarget{_util_8h_a95ecc4ca97a0c3864054859762daf725}{\index{Util.\-h@{Util.\-h}!decompose\-Rotation@{decompose\-Rotation}}
+\index{decompose\-Rotation@{decompose\-Rotation}!Util.h@{Util.\-h}}
+\subsubsection[{decompose\-Rotation}]{\setlength{\rightskip}{0pt plus 5cm}ngl\-::\-Vec3 decompose\-Rotation (
+\begin{DoxyParamCaption}
+\item[{ngl\-::\-Mat3}]{\-\_\-m}
+\end{DoxyParamCaption}
+)}}\label{_util_8h_a95ecc4ca97a0c3864054859762daf725}
+
+
+function to decompose rotation matrix is yaw,pitch and roll euler angles in degrees this function is not working well as the angle Y seems to be wrong on occasion 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \-\_\-m} & mat3 rotation matrix \\
+\hline
+\mbox{\tt out}  & {\em ngl\-::\-Vec3} & Euler rotation in Degrees \\
+\hline
+\end{DoxyParams}
+\hypertarget{_util_8h_a974b9d9f8db11a5b4473037dbd8e90fd}{\index{Util.\-h@{Util.\-h}!display\-Dual\-Quaternion@{display\-Dual\-Quaternion}}
+\index{display\-Dual\-Quaternion@{display\-Dual\-Quaternion}!Util.h@{Util.\-h}}
+\subsubsection[{display\-Dual\-Quaternion}]{\setlength{\rightskip}{0pt plus 5cm}void display\-Dual\-Quaternion (
+\begin{DoxyParamCaption}
+\item[{{\bf Dual\-Quaternion}}]{\-\_\-d, }
+\item[{std\-::string}]{\-\_\-s = {\ttfamily \char`\"{}DQ-\/-\/\char`\"{}}}
+\end{DoxyParamCaption}
+)}}\label{_util_8h_a974b9d9f8db11a5b4473037dbd8e90fd}
+
+
+display \hyperlink{class_dual_quaternion}{Dual\-Quaternion} 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \-\_\-v} & \hyperlink{class_dual_quaternion}{Dual\-Quaternion} \\
+\hline
+\mbox{\tt in}  & {\em \-\_\-s} & string to print in front \\
+\hline
+\end{DoxyParams}
+\hypertarget{_util_8h_af58af0160f03549bbb52fdea4f92eaac}{\index{Util.\-h@{Util.\-h}!display\-Mat@{display\-Mat}}
+\index{display\-Mat@{display\-Mat}!Util.h@{Util.\-h}}
+\subsubsection[{display\-Mat}]{\setlength{\rightskip}{0pt plus 5cm}void display\-Mat (
+\begin{DoxyParamCaption}
+\item[{ngl\-::\-Mat3}]{\-\_\-m, }
+\item[{std\-::string}]{\-\_\-s = {\ttfamily \char`\"{}Mat3\char`\"{}}}
+\end{DoxyParamCaption}
+)}}\label{_util_8h_af58af0160f03549bbb52fdea4f92eaac}
+
+
+display N\-G\-L\-::mat3 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \-\_\-m} & ngl\-::mat3 \\
+\hline
+\mbox{\tt in}  & {\em \-\_\-s} & string to print in front \\
+\hline
+\end{DoxyParams}
+\hypertarget{_util_8h_ae375f579be8ff7fe9cb26cb347eec814}{\index{Util.\-h@{Util.\-h}!display\-Mat@{display\-Mat}}
+\index{display\-Mat@{display\-Mat}!Util.h@{Util.\-h}}
+\subsubsection[{display\-Mat}]{\setlength{\rightskip}{0pt plus 5cm}void display\-Mat (
+\begin{DoxyParamCaption}
+\item[{ngl\-::\-Mat4}]{\-\_\-m, }
+\item[{std\-::string}]{\-\_\-s = {\ttfamily \char`\"{}Mat4\char`\"{}}}
+\end{DoxyParamCaption}
+)}}\label{_util_8h_ae375f579be8ff7fe9cb26cb347eec814}
+
+
+display N\-G\-L\-::mat4 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \-\_\-m} & ngl\-::mat4 \\
+\hline
+\mbox{\tt in}  & {\em \-\_\-s} & string to print in front \\
+\hline
+\end{DoxyParams}
+\hypertarget{_util_8h_a5869b099726eae81376e5f8b22470e36}{\index{Util.\-h@{Util.\-h}!display\-Quat@{display\-Quat}}
+\index{display\-Quat@{display\-Quat}!Util.h@{Util.\-h}}
+\subsubsection[{display\-Quat}]{\setlength{\rightskip}{0pt plus 5cm}void display\-Quat (
+\begin{DoxyParamCaption}
+\item[{ngl\-::\-Quaternion}]{\-\_\-q, }
+\item[{std\-::string}]{\-\_\-s = {\ttfamily \char`\"{}Q4\char`\"{}}}
+\end{DoxyParamCaption}
+)}}\label{_util_8h_a5869b099726eae81376e5f8b22470e36}
+
+
+display N\-G\-L\-::\-Quaternion 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \-\_\-q} & ngl\-::\-Quaternion \\
+\hline
+\mbox{\tt in}  & {\em \-\_\-s} & string to print in front \\
+\hline
+\end{DoxyParams}
+\hypertarget{_util_8h_aa8dada8f347b316ca97c0d57a3e951ac}{\index{Util.\-h@{Util.\-h}!display\-Vec@{display\-Vec}}
+\index{display\-Vec@{display\-Vec}!Util.h@{Util.\-h}}
+\subsubsection[{display\-Vec}]{\setlength{\rightskip}{0pt plus 5cm}void display\-Vec (
+\begin{DoxyParamCaption}
+\item[{ngl\-::\-Vec3}]{\-\_\-v, }
+\item[{std\-::string}]{\-\_\-s = {\ttfamily \char`\"{}V3\char`\"{}}}
+\end{DoxyParamCaption}
+)}}\label{_util_8h_aa8dada8f347b316ca97c0d57a3e951ac}
+
+
+display N\-G\-L\-::vec3 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \-\_\-v} & ngl\-::\-Vec3 \\
+\hline
+\mbox{\tt in}  & {\em \-\_\-s} & string to print in front \\
+\hline
+\end{DoxyParams}
+\hypertarget{_util_8h_a6f810d3f1e63b8e1372f30599d0ad6e5}{\index{Util.\-h@{Util.\-h}!get\-Translate\-Rotate@{get\-Translate\-Rotate}}
+\index{get\-Translate\-Rotate@{get\-Translate\-Rotate}!Util.h@{Util.\-h}}
+\subsubsection[{get\-Translate\-Rotate}]{\setlength{\rightskip}{0pt plus 5cm}void get\-Translate\-Rotate (
+\begin{DoxyParamCaption}
+\item[{ngl\-::\-Mat4}]{\-\_\-m, }
+\item[{ngl\-::\-Mat3 \&}]{\-\_\-r, }
+\item[{ngl\-::\-Vec3 \&}]{\-\_\-t}
+\end{DoxyParamCaption}
+)}}\label{_util_8h_a6f810d3f1e63b8e1372f30599d0ad6e5}
+
+
+return the rotation matrix3x3 and translate works only for rigid transforms 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \-\_\-m} & rigid affine matrix \\
+\hline
+\mbox{\tt in}  & {\em \-\_\-r} & rotation matrix \\
+\hline
+\mbox{\tt in}  & {\em \-\_\-t} & translate \\
+\hline
+\end{DoxyParams}
+\hypertarget{_util_8h_ab7aec86b3bda1b497a4f1aaa9b62ba86}{\index{Util.\-h@{Util.\-h}!get\-Translate\-Rotate@{get\-Translate\-Rotate}}
+\index{get\-Translate\-Rotate@{get\-Translate\-Rotate}!Util.h@{Util.\-h}}
+\subsubsection[{get\-Translate\-Rotate}]{\setlength{\rightskip}{0pt plus 5cm}void get\-Translate\-Rotate (
+\begin{DoxyParamCaption}
+\item[{const ngl\-::\-Mat4 \&}]{\-\_\-m, }
+\item[{ngl\-::\-Quaternion \&}]{\-\_\-r, }
+\item[{ngl\-::\-Vec3 \&}]{\-\_\-t}
+\end{DoxyParamCaption}
+)}}\label{_util_8h_ab7aec86b3bda1b497a4f1aaa9b62ba86}
+
+
+return the rotation matrix3x3 and translate works only for rigid transforms 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \-\_\-m} & rigid affine matrix \\
+\hline
+\mbox{\tt in}  & {\em \-\_\-r} & rotation quaternion \\
+\hline
+\mbox{\tt in}  & {\em \-\_\-t} & translate \\
+\hline
+\end{DoxyParams}
+\hypertarget{_util_8h_a68dbaf73278ee7354543c7e5426cb04f}{\index{Util.\-h@{Util.\-h}!mult\-Matrix@{mult\-Matrix}}
+\index{mult\-Matrix@{mult\-Matrix}!Util.h@{Util.\-h}}
+\subsubsection[{mult\-Matrix}]{\setlength{\rightskip}{0pt plus 5cm}ngl\-::\-Vec3 mult\-Matrix (
+\begin{DoxyParamCaption}
+\item[{ngl\-::\-Vec3}]{\-\_\-v, }
+\item[{ngl\-::\-Mat4}]{\-\_\-m, }
+\item[{ngl\-::\-Real}]{\-\_\-w = {\ttfamily 1.0f}}
+\end{DoxyParamCaption}
+)}}\label{_util_8h_a68dbaf73278ee7354543c7e5426cb04f}
+
+
+multiply a vec3 point with a 4x4 matrix and return the transformed point 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \-\_\-v} & input point \\
+\hline
+\mbox{\tt in}  & {\em \-\_\-m} & transform matrix \\
+\hline
+\mbox{\tt in}  & {\em \-\_\-w} & weight of transformatoin \\
+\hline
+\mbox{\tt out}  & {\em ngl\-::\-Vec3} & transformed point \\
+\hline
+\end{DoxyParams}
+\hypertarget{_util_8h_a03fcaea7c9e193cec9e7338bf3eca1f2}{\index{Util.\-h@{Util.\-h}!Quat\-\_\-dot@{Quat\-\_\-dot}}
+\index{Quat\-\_\-dot@{Quat\-\_\-dot}!Util.h@{Util.\-h}}
+\subsubsection[{Quat\-\_\-dot}]{\setlength{\rightskip}{0pt plus 5cm}ngl\-::\-Real Quat\-\_\-dot (
+\begin{DoxyParamCaption}
+\item[{ngl\-::\-Quaternion}]{\-\_\-p, }
+\item[{ngl\-::\-Quaternion}]{\-\_\-q}
+\end{DoxyParamCaption}
+)}}\label{_util_8h_a03fcaea7c9e193cec9e7338bf3eca1f2}
+
+
+used for calculation simplicity its just a multiplication of similar variables dot=x$\ast$x+y$\ast$y+z$\ast$z+w$\ast$w 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \-\_\-p} & Quaternion 1 \\
+\hline
+\mbox{\tt in}  & {\em \-\_\-q} & Qauternion 2 \\
+\hline
+\mbox{\tt out}  & {\em ngl\-::\-Real} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{_util_8h_ac2ab5bbdee266e1b0c8a3cd9f91bb050}{\index{Util.\-h@{Util.\-h}!Quat\-\_\-transfom\-Point@{Quat\-\_\-transfom\-Point}}
+\index{Quat\-\_\-transfom\-Point@{Quat\-\_\-transfom\-Point}!Util.h@{Util.\-h}}
+\subsubsection[{Quat\-\_\-transfom\-Point}]{\setlength{\rightskip}{0pt plus 5cm}ngl\-::\-Vec3 Quat\-\_\-transfom\-Point (
+\begin{DoxyParamCaption}
+\item[{ngl\-::\-Quaternion}]{\-\_\-q, }
+\item[{ngl\-::\-Vec3}]{\-\_\-v}
+\end{DoxyParamCaption}
+)}}\label{_util_8h_ac2ab5bbdee266e1b0c8a3cd9f91bb050}
+
+
+function that transforms a point using Quaternion quaternion tranformation using cross product instead q$\ast$v$\ast$q1 v1 = v + 2r × (r × v + av) where v is original point,quaternion is $<$a,r$>$ 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \-\_\-q} & Rotation Quaternion \\
+\hline
+\mbox{\tt in}  & {\em \-\_\-v} & ngl\-::vec3 point \\
+\hline
+\mbox{\tt out}  & {\em ngl\-::\-Vec3} & transformed point \\
+\hline
+\end{DoxyParams}

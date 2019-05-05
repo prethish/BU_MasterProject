@@ -1,0 +1,54 @@
+\hypertarget{_a_i_util_8h}{\section{/home/prethish/\-Coding/\-Thesis\-\_\-new/\-L\-B\-Skin/include/\-A\-I\-Util.h File Reference}
+\label{_a_i_util_8h}\index{/home/prethish/\-Coding/\-Thesis\-\_\-new/\-L\-B\-Skin/include/\-A\-I\-Util.\-h@{/home/prethish/\-Coding/\-Thesis\-\_\-new/\-L\-B\-Skin/include/\-A\-I\-Util.\-h}}
+}
+
+
+Util functions that help converting between Assimp and N\-G\-L.  
+
+
+{\ttfamily \#include $<$assimp/scene.\-h$>$}\\*
+{\ttfamily \#include $<$assimp/cimport.\-h$>$}\\*
+Include dependency graph for A\-I\-Util.\-h\-:
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacengl}{ngl}
+\item 
+\hyperlink{namespace_a_i_u}{A\-I\-U}
+\end{DoxyCompactItemize}
+\subsection*{Constant Groups}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacengl}{ngl}
+\item 
+\hyperlink{namespace_a_i_u}{A\-I\-U}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+ngl\-::\-Mat4 \hyperlink{namespace_a_i_u_a51999c877e7faf195cbfaec3bb9cd531}{A\-I\-U\-::ai\-Matrix4x4\-To\-N\-G\-L\-Mat4} (const ai\-Matrix4x4 \&\-\_\-m)
+\begin{DoxyCompactList}\small\item\em converts between Assimp native Matrix format and N\-G\-L\-::matrix format \end{DoxyCompactList}\item 
+ngl\-::\-Mat4 \hyperlink{namespace_a_i_u_a1fd4d6d55704da45f1d762008982f407}{A\-I\-U\-::ai\-Matrix4x4\-To\-N\-G\-L\-Mat4\-Transpose} (const ai\-Matrix4x4 \&\-\_\-m)
+\begin{DoxyCompactList}\small\item\em converts between Assimp native Matrix format and N\-G\-L\-::matrix format after transposing \end{DoxyCompactList}\item 
+ngl\-::\-Vec3 \hyperlink{namespace_a_i_u_ae13de0c4e6897fdf16156c0fdb3430de}{A\-I\-U\-::ai\-Vector3\-D\-To\-N\-G\-L\-Vec3} (const ai\-Vector3\-D \&\-\_\-v)
+\begin{DoxyCompactList}\small\item\em converts between Assimp native vector3 format and N\-G\-L\-::vec3 format \end{DoxyCompactList}\item 
+ngl\-::\-Vec4 \hyperlink{namespace_a_i_u_a830ee88a9d40bc36b063696ef388992b}{A\-I\-U\-::ai\-Vector3\-D\-To\-N\-G\-L\-Vec4} (const ai\-Vector3\-D \&\-\_\-v)
+\begin{DoxyCompactList}\small\item\em converts between Assimp native vector3 format and N\-G\-L\-::vec4 format after setting vec4.\-w=1.\-0 \end{DoxyCompactList}\item 
+ngl\-::\-Vec2 \hyperlink{namespace_a_i_u_a62170c913a724cbf821ab2d0edbae052}{A\-I\-U\-::ai\-Vector2\-D\-To\-N\-G\-L\-Vec2} (const ai\-Vector2\-D \&\-\_\-v)
+\begin{DoxyCompactList}\small\item\em converts between Assimp native vector2 format and N\-G\-L\-::vec2 format \end{DoxyCompactList}\item 
+ngl\-::\-Quaternion \hyperlink{namespace_a_i_u_a5a0e9b6c6e335922cdfb0453e1811b67}{A\-I\-U\-::ai\-Quat\-To\-N\-G\-L\-Quat} (const ai\-Quaternion \&\-\_\-v)
+\begin{DoxyCompactList}\small\item\em converts between Assimp native quaternion format and N\-G\-L\-::\-Quaternion format \end{DoxyCompactList}\item 
+void \hyperlink{namespace_a_i_u_a9d2614a4a81a8e1f17015892459df95b}{A\-I\-U\-::get\-Scene\-Bounding\-Box} (const ai\-Scene $\ast$scene, ngl\-::\-Vec3 \&o\-\_\-min, ngl\-::\-Vec3 \&o\-\_\-max)
+\begin{DoxyCompactList}\small\item\em calculate the bounding box of the scene after looping through all the meshes \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Util functions that help converting between Assimp and N\-G\-L. \begin{DoxyAuthor}{Author}
+Jonathan Macey 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+10/9/13 
+\end{DoxyDate}

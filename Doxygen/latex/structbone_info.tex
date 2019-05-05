@@ -1,0 +1,62 @@
+\hypertarget{structbone_info}{\section{bone\-Info Struct Reference}
+\label{structbone_info}\index{bone\-Info@{bone\-Info}}
+}
+
+
+struct to store bone data per bone for skinning the matrix stored are in the assimp order,so transpose must be used to use with N\-G\-L\-::mat4 matrices  
+
+
+
+
+{\ttfamily \#include $<$Data\-Types.\-h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ngl\-::\-Mat4 \hyperlink{structbone_info_a9ce75c67a0531088b753748b1a0d662f}{m\-\_\-final\-Transform}
+\begin{DoxyCompactList}\small\item\em final world transformation for animation \end{DoxyCompactList}\item 
+ngl\-::\-Mat4 \hyperlink{structbone_info_a76b97b00a65fcc7f0da632b4482f2736}{m\-\_\-bind\-Transform}
+\begin{DoxyCompactList}\small\item\em bind pose world transformation \end{DoxyCompactList}\item 
+ngl\-::\-Vec3 \hyperlink{structbone_info_aa1d6e7a3b0575366ff7927f6087fe204}{m\-\_\-rest\-Position}
+\begin{DoxyCompactList}\small\item\em bind pose rest position in vector3d \end{DoxyCompactList}\item 
+int \hyperlink{structbone_info_a6658fd0f8b4d914039cb6c1e21a59d33}{m\-\_\-parent\-Bone\-Id}
+\begin{DoxyCompactList}\small\item\em parent I\-Ds of the bone connected with the current bone for this project i have not coded for multiple parents \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+struct to store bone data per bone for skinning the matrix stored are in the assimp order,so transpose must be used to use with N\-G\-L\-::mat4 matrices 
+
+\subsection{Member Data Documentation}
+\hypertarget{structbone_info_a76b97b00a65fcc7f0da632b4482f2736}{\index{bone\-Info@{bone\-Info}!m\-\_\-bind\-Transform@{m\-\_\-bind\-Transform}}
+\index{m\-\_\-bind\-Transform@{m\-\_\-bind\-Transform}!boneInfo@{bone\-Info}}
+\subsubsection[{m\-\_\-bind\-Transform}]{\setlength{\rightskip}{0pt plus 5cm}ngl\-::\-Mat4 bone\-Info\-::m\-\_\-bind\-Transform}}\label{structbone_info_a76b97b00a65fcc7f0da632b4482f2736}
+
+
+bind pose world transformation 
+
+\hypertarget{structbone_info_a9ce75c67a0531088b753748b1a0d662f}{\index{bone\-Info@{bone\-Info}!m\-\_\-final\-Transform@{m\-\_\-final\-Transform}}
+\index{m\-\_\-final\-Transform@{m\-\_\-final\-Transform}!boneInfo@{bone\-Info}}
+\subsubsection[{m\-\_\-final\-Transform}]{\setlength{\rightskip}{0pt plus 5cm}ngl\-::\-Mat4 bone\-Info\-::m\-\_\-final\-Transform}}\label{structbone_info_a9ce75c67a0531088b753748b1a0d662f}
+
+
+final world transformation for animation 
+
+\hypertarget{structbone_info_a6658fd0f8b4d914039cb6c1e21a59d33}{\index{bone\-Info@{bone\-Info}!m\-\_\-parent\-Bone\-Id@{m\-\_\-parent\-Bone\-Id}}
+\index{m\-\_\-parent\-Bone\-Id@{m\-\_\-parent\-Bone\-Id}!boneInfo@{bone\-Info}}
+\subsubsection[{m\-\_\-parent\-Bone\-Id}]{\setlength{\rightskip}{0pt plus 5cm}int bone\-Info\-::m\-\_\-parent\-Bone\-Id}}\label{structbone_info_a6658fd0f8b4d914039cb6c1e21a59d33}
+
+
+parent I\-Ds of the bone connected with the current bone for this project i have not coded for multiple parents 
+
+\hypertarget{structbone_info_aa1d6e7a3b0575366ff7927f6087fe204}{\index{bone\-Info@{bone\-Info}!m\-\_\-rest\-Position@{m\-\_\-rest\-Position}}
+\index{m\-\_\-rest\-Position@{m\-\_\-rest\-Position}!boneInfo@{bone\-Info}}
+\subsubsection[{m\-\_\-rest\-Position}]{\setlength{\rightskip}{0pt plus 5cm}ngl\-::\-Vec3 bone\-Info\-::m\-\_\-rest\-Position}}\label{structbone_info_aa1d6e7a3b0575366ff7927f6087fe204}
+
+
+bind pose rest position in vector3d 
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/prethish/\-Coding/\-Thesis\-\_\-new/\-L\-B\-Skin/include/\hyperlink{_data_types_8h}{Data\-Types.\-h}\end{DoxyCompactItemize}

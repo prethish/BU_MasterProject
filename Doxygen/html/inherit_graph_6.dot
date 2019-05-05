@@ -1,0 +1,7 @@
+digraph "Graphical Class Hierarchy"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="SkinDeformer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_skin_deformer.html",tooltip="it first creates and stores the vertex data from the scene data passed to it A vertexArrayObject for ..."];
+}

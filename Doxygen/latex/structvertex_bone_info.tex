@@ -1,0 +1,105 @@
+\hypertarget{structvertex_bone_info}{\section{vertex\-Bone\-Info Struct Reference}
+\label{structvertex_bone_info}\index{vertex\-Bone\-Info@{vertex\-Bone\-Info}}
+}
+
+
+structure to store data per vertex for skinning it stores weights per bone and the bone I\-Ds corresponding to the weights usually the number of weights per bone is limited to 4 for standard use.  
+
+
+
+
+{\ttfamily \#include $<$Data\-Types.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structvertex_bone_info_a0b21f08b5c3ef7e6098932c9099b520f}{vertex\-Bone\-Info} ()
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+void \hyperlink{structvertex_bone_info_a93393e0435ba8efb0927ac10e1bc29e0}{add\-Bone\-Data} (uint Bone\-I\-D, float Weight)
+\begin{DoxyCompactList}\small\item\em member function to add the bone data and increment the number of weights \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+short int \hyperlink{structvertex_bone_info_a0cf6fd740dc88b306d45207502aa0cbc}{m\-\_\-n\-Weights}
+\begin{DoxyCompactList}\small\item\em Number of bones that influences the vertex. \end{DoxyCompactList}\item 
+std\-::vector$<$ int $>$ \hyperlink{structvertex_bone_info_a1c6a7f3c896ef14cfd0d67413b4e6968}{m\-\_\-bone\-Ids}
+\begin{DoxyCompactList}\small\item\em The ids of the bones the influences the vertex, the index of bone\-Data in array of struct \hyperlink{structbone_info}{bone\-Info} is the I\-D. \end{DoxyCompactList}\item 
+std\-::vector$<$ ngl\-::\-Real $>$ \hyperlink{structvertex_bone_info_a3f832186c084ce895c7a98fc96bda4a0}{m\-\_\-skin\-Weights}
+\begin{DoxyCompactList}\small\item\em the weights of each bone pre vertex usually adding all weights will equal to 1 \end{DoxyCompactList}\item 
+std\-::vector$<$ ngl\-::\-Real $>$ \hyperlink{structvertex_bone_info_a2a6be4f7097e11c758236b20b7961bca}{m\-\_\-end\-Weights}
+\begin{DoxyCompactList}\small\item\em the end weights pre vertex \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+structure to store data per vertex for skinning it stores weights per bone and the bone I\-Ds corresponding to the weights usually the number of weights per bone is limited to 4 for standard use. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structvertex_bone_info_a0b21f08b5c3ef7e6098932c9099b520f}{\index{vertex\-Bone\-Info@{vertex\-Bone\-Info}!vertex\-Bone\-Info@{vertex\-Bone\-Info}}
+\index{vertex\-Bone\-Info@{vertex\-Bone\-Info}!vertexBoneInfo@{vertex\-Bone\-Info}}
+\subsubsection[{vertex\-Bone\-Info}]{\setlength{\rightskip}{0pt plus 5cm}vertex\-Bone\-Info\-::vertex\-Bone\-Info (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structvertex_bone_info_a0b21f08b5c3ef7e6098932c9099b520f}
+
+
+constructor 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structvertex_bone_info_a93393e0435ba8efb0927ac10e1bc29e0}{\index{vertex\-Bone\-Info@{vertex\-Bone\-Info}!add\-Bone\-Data@{add\-Bone\-Data}}
+\index{add\-Bone\-Data@{add\-Bone\-Data}!vertexBoneInfo@{vertex\-Bone\-Info}}
+\subsubsection[{add\-Bone\-Data}]{\setlength{\rightskip}{0pt plus 5cm}void vertex\-Bone\-Info\-::add\-Bone\-Data (
+\begin{DoxyParamCaption}
+\item[{uint}]{Bone\-I\-D, }
+\item[{float}]{Weight}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structvertex_bone_info_a93393e0435ba8efb0927ac10e1bc29e0}
+
+
+member function to add the bone data and increment the number of weights 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em Bone\-I\-D} & \\
+\hline
+\mbox{\tt in}  & {\em Weight} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structvertex_bone_info_a1c6a7f3c896ef14cfd0d67413b4e6968}{\index{vertex\-Bone\-Info@{vertex\-Bone\-Info}!m\-\_\-bone\-Ids@{m\-\_\-bone\-Ids}}
+\index{m\-\_\-bone\-Ids@{m\-\_\-bone\-Ids}!vertexBoneInfo@{vertex\-Bone\-Info}}
+\subsubsection[{m\-\_\-bone\-Ids}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$int$>$ vertex\-Bone\-Info\-::m\-\_\-bone\-Ids}}\label{structvertex_bone_info_a1c6a7f3c896ef14cfd0d67413b4e6968}
+
+
+The ids of the bones the influences the vertex, the index of bone\-Data in array of struct \hyperlink{structbone_info}{bone\-Info} is the I\-D. 
+
+\hypertarget{structvertex_bone_info_a2a6be4f7097e11c758236b20b7961bca}{\index{vertex\-Bone\-Info@{vertex\-Bone\-Info}!m\-\_\-end\-Weights@{m\-\_\-end\-Weights}}
+\index{m\-\_\-end\-Weights@{m\-\_\-end\-Weights}!vertexBoneInfo@{vertex\-Bone\-Info}}
+\subsubsection[{m\-\_\-end\-Weights}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ngl\-::\-Real$>$ vertex\-Bone\-Info\-::m\-\_\-end\-Weights}}\label{structvertex_bone_info_a2a6be4f7097e11c758236b20b7961bca}
+
+
+the end weights pre vertex 
+
+\hypertarget{structvertex_bone_info_a0cf6fd740dc88b306d45207502aa0cbc}{\index{vertex\-Bone\-Info@{vertex\-Bone\-Info}!m\-\_\-n\-Weights@{m\-\_\-n\-Weights}}
+\index{m\-\_\-n\-Weights@{m\-\_\-n\-Weights}!vertexBoneInfo@{vertex\-Bone\-Info}}
+\subsubsection[{m\-\_\-n\-Weights}]{\setlength{\rightskip}{0pt plus 5cm}short int vertex\-Bone\-Info\-::m\-\_\-n\-Weights}}\label{structvertex_bone_info_a0cf6fd740dc88b306d45207502aa0cbc}
+
+
+Number of bones that influences the vertex. 
+
+\hypertarget{structvertex_bone_info_a3f832186c084ce895c7a98fc96bda4a0}{\index{vertex\-Bone\-Info@{vertex\-Bone\-Info}!m\-\_\-skin\-Weights@{m\-\_\-skin\-Weights}}
+\index{m\-\_\-skin\-Weights@{m\-\_\-skin\-Weights}!vertexBoneInfo@{vertex\-Bone\-Info}}
+\subsubsection[{m\-\_\-skin\-Weights}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ngl\-::\-Real$>$ vertex\-Bone\-Info\-::m\-\_\-skin\-Weights}}\label{structvertex_bone_info_a3f832186c084ce895c7a98fc96bda4a0}
+
+
+the weights of each bone pre vertex usually adding all weights will equal to 1 
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/prethish/\-Coding/\-Thesis\-\_\-new/\-L\-B\-Skin/include/\hyperlink{_data_types_8h}{Data\-Types.\-h}\end{DoxyCompactItemize}

@@ -1,0 +1,180 @@
+\hypertarget{class_scene_loader}{\section{Scene\-Loader Class Reference}
+\label{class_scene_loader}\index{Scene\-Loader@{Scene\-Loader}}
+}
+
+
+Sceneloader Class to load a single mesh and animated bones the ngl\-::\-Abstract mesh class was inherited and assimp used to import mesh.  
+
+
+
+
+{\ttfamily \#include $<$Scene\-Loader.\-h$>$}
+
+
+
+Inheritance diagram for Scene\-Loader\-:
+
+
+Collaboration diagram for Scene\-Loader\-:
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_scene_loader_a3b259dbd31c787f0cd7a6b63bd3cd200}{Scene\-Loader} ()
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_scene_loader_ad00aff2b9f8c3e7953b6e5dd7444fb9a}{load} (const std\-::string \&\-\_\-fname, bool \-\_\-calc\-B\-B=true)
+\begin{DoxyCompactList}\small\item\em virtual function inherited from Abstractmesh and defined here using assimp \end{DoxyCompactList}\item 
+unsigned int \hyperlink{class_scene_loader_a0a13951dbe8ccf74b78de0d211fccf54}{num\-Bones} () const 
+\begin{DoxyCompactList}\small\item\em accessor for the number of bones in the mesh \end{DoxyCompactList}\item 
+double \hyperlink{class_scene_loader_ab0c71c24ce931bcc72f7f0da0b446749}{get\-Duration} () const 
+\begin{DoxyCompactList}\small\item\em accessor for the time in seconds of the animation \end{DoxyCompactList}\item 
+double \hyperlink{class_scene_loader_aed77ebdcac27b60d38d55dba797be45e}{get\-Ticks\-Per\-Sec} () const 
+\begin{DoxyCompactList}\small\item\em how many tick in the animation per second \end{DoxyCompactList}\item 
+void \hyperlink{class_scene_loader_a4405e9ee3d3e20bf199f84dcd67e7c3d}{bone\-Transform} (float \-\_\-time\-In\-Seconds, std\-::vector$<$ ngl\-::\-Mat4 $>$ \&o\-\_\-transforms)
+\begin{DoxyCompactList}\small\item\em this set the bone transformation for the current time. This is then passed to the shader to do the animation of the mesh \end{DoxyCompactList}\item 
+ngl\-::\-Face \hyperlink{class_scene_loader_a3369b4f8e5bf4a90b59c51ce9817a867}{get\-Face} (unsigned int \-\_\-index)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::vector$<$ \hyperlink{structvert_data}{vert\-Data} $>$ \hyperlink{class_scene_loader_a55597764e53f19f90331ee48fb8dab4c}{m\-\_\-vert\-Data}
+\begin{DoxyCompactList}\small\item\em vertex data(\-U\-V,\-Normal,\-Position) that accessed by skindeformer class \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{structbone_info}{bone\-Info} $>$ \hyperlink{class_scene_loader_a05a42b9ae1841b41fb12e62873dc79c7}{m\-\_\-bone\-Data}
+\begin{DoxyCompactList}\small\item\em per bone data(bind pose Matrix,final transform matrix) that accessed by skindeformer class \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{structvertex_bone_info}{vertex\-Bone\-Info} $>$ \hyperlink{class_scene_loader_a1835f991ea13ab5521868e603a62c8f0}{m\-\_\-vertex\-Bone\-Data}
+\begin{DoxyCompactList}\small\item\em per vertex data that stores the influence bone ids and weights \end{DoxyCompactList}\item 
+std\-::vector$<$ ngl\-::\-Real $>$ \hyperlink{class_scene_loader_a543a0d0ac431a63e02bf618ced255ee0}{m\-\_\-end\-Point\-Weights}
+\begin{DoxyCompactList}\small\item\em per vertex end\-Point weights \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Sceneloader Class to load a single mesh and animated bones the ngl\-::\-Abstract mesh class was inherited and assimp used to import mesh. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_scene_loader_a3b259dbd31c787f0cd7a6b63bd3cd200}{\index{Scene\-Loader@{Scene\-Loader}!Scene\-Loader@{Scene\-Loader}}
+\index{Scene\-Loader@{Scene\-Loader}!SceneLoader@{Scene\-Loader}}
+\subsubsection[{Scene\-Loader}]{\setlength{\rightskip}{0pt plus 5cm}Scene\-Loader\-::\-Scene\-Loader (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_scene_loader_a3b259dbd31c787f0cd7a6b63bd3cd200}
+
+
+constructor 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_scene_loader_a4405e9ee3d3e20bf199f84dcd67e7c3d}{\index{Scene\-Loader@{Scene\-Loader}!bone\-Transform@{bone\-Transform}}
+\index{bone\-Transform@{bone\-Transform}!SceneLoader@{Scene\-Loader}}
+\subsubsection[{bone\-Transform}]{\setlength{\rightskip}{0pt plus 5cm}void Scene\-Loader\-::bone\-Transform (
+\begin{DoxyParamCaption}
+\item[{float}]{\-\_\-time\-In\-Seconds, }
+\item[{std\-::vector$<$ ngl\-::\-Mat4 $>$ \&}]{o\-\_\-transforms}
+\end{DoxyParamCaption}
+)}}\label{class_scene_loader_a4405e9ee3d3e20bf199f84dcd67e7c3d}
+
+
+this set the bone transformation for the current time. This is then passed to the shader to do the animation of the mesh 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \-\_\-time\-In\-Seconds} & the time to set the animation frame to \\
+\hline
+\mbox{\tt out}  & {\em \-\_\-transforms} & an array of transform matrices for the current frame \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_scene_loader_ab0c71c24ce931bcc72f7f0da0b446749}{\index{Scene\-Loader@{Scene\-Loader}!get\-Duration@{get\-Duration}}
+\index{get\-Duration@{get\-Duration}!SceneLoader@{Scene\-Loader}}
+\subsubsection[{get\-Duration}]{\setlength{\rightskip}{0pt plus 5cm}double Scene\-Loader\-::get\-Duration (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_scene_loader_ab0c71c24ce931bcc72f7f0da0b446749}
+
+
+accessor for the time in seconds of the animation 
+
+\hypertarget{class_scene_loader_a3369b4f8e5bf4a90b59c51ce9817a867}{\index{Scene\-Loader@{Scene\-Loader}!get\-Face@{get\-Face}}
+\index{get\-Face@{get\-Face}!SceneLoader@{Scene\-Loader}}
+\subsubsection[{get\-Face}]{\setlength{\rightskip}{0pt plus 5cm}ngl\-::\-Face Scene\-Loader\-::get\-Face (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{\-\_\-index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_scene_loader_a3369b4f8e5bf4a90b59c51ce9817a867}
+\hypertarget{class_scene_loader_aed77ebdcac27b60d38d55dba797be45e}{\index{Scene\-Loader@{Scene\-Loader}!get\-Ticks\-Per\-Sec@{get\-Ticks\-Per\-Sec}}
+\index{get\-Ticks\-Per\-Sec@{get\-Ticks\-Per\-Sec}!SceneLoader@{Scene\-Loader}}
+\subsubsection[{get\-Ticks\-Per\-Sec}]{\setlength{\rightskip}{0pt plus 5cm}double Scene\-Loader\-::get\-Ticks\-Per\-Sec (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_scene_loader_aed77ebdcac27b60d38d55dba797be45e}
+
+
+how many tick in the animation per second 
+
+\hypertarget{class_scene_loader_ad00aff2b9f8c3e7953b6e5dd7444fb9a}{\index{Scene\-Loader@{Scene\-Loader}!load@{load}}
+\index{load@{load}!SceneLoader@{Scene\-Loader}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Scene\-Loader\-::load (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{\-\_\-fname, }
+\item[{bool}]{\-\_\-calc\-B\-B = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_scene_loader_ad00aff2b9f8c3e7953b6e5dd7444fb9a}
+
+
+virtual function inherited from Abstractmesh and defined here using assimp 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \-\_\-fname} & folder path to file \\
+\hline
+\mbox{\tt in}  & {\em \-\_\-calc\-B\-B} & calculate scene bounding box if true. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_scene_loader_a0a13951dbe8ccf74b78de0d211fccf54}{\index{Scene\-Loader@{Scene\-Loader}!num\-Bones@{num\-Bones}}
+\index{num\-Bones@{num\-Bones}!SceneLoader@{Scene\-Loader}}
+\subsubsection[{num\-Bones}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Scene\-Loader\-::num\-Bones (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_scene_loader_a0a13951dbe8ccf74b78de0d211fccf54}
+
+
+accessor for the number of bones in the mesh 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_scene_loader_a05a42b9ae1841b41fb12e62873dc79c7}{\index{Scene\-Loader@{Scene\-Loader}!m\-\_\-bone\-Data@{m\-\_\-bone\-Data}}
+\index{m\-\_\-bone\-Data@{m\-\_\-bone\-Data}!SceneLoader@{Scene\-Loader}}
+\subsubsection[{m\-\_\-bone\-Data}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf bone\-Info}$>$ Scene\-Loader\-::m\-\_\-bone\-Data}}\label{class_scene_loader_a05a42b9ae1841b41fb12e62873dc79c7}
+
+
+per bone data(bind pose Matrix,final transform matrix) that accessed by skindeformer class 
+
+\hypertarget{class_scene_loader_a543a0d0ac431a63e02bf618ced255ee0}{\index{Scene\-Loader@{Scene\-Loader}!m\-\_\-end\-Point\-Weights@{m\-\_\-end\-Point\-Weights}}
+\index{m\-\_\-end\-Point\-Weights@{m\-\_\-end\-Point\-Weights}!SceneLoader@{Scene\-Loader}}
+\subsubsection[{m\-\_\-end\-Point\-Weights}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ngl\-::\-Real$>$ Scene\-Loader\-::m\-\_\-end\-Point\-Weights}}\label{class_scene_loader_a543a0d0ac431a63e02bf618ced255ee0}
+
+
+per vertex end\-Point weights 
+
+\hypertarget{class_scene_loader_a55597764e53f19f90331ee48fb8dab4c}{\index{Scene\-Loader@{Scene\-Loader}!m\-\_\-vert\-Data@{m\-\_\-vert\-Data}}
+\index{m\-\_\-vert\-Data@{m\-\_\-vert\-Data}!SceneLoader@{Scene\-Loader}}
+\subsubsection[{m\-\_\-vert\-Data}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf vert\-Data}$>$ Scene\-Loader\-::m\-\_\-vert\-Data}}\label{class_scene_loader_a55597764e53f19f90331ee48fb8dab4c}
+
+
+vertex data(\-U\-V,\-Normal,\-Position) that accessed by skindeformer class 
+
+\hypertarget{class_scene_loader_a1835f991ea13ab5521868e603a62c8f0}{\index{Scene\-Loader@{Scene\-Loader}!m\-\_\-vertex\-Bone\-Data@{m\-\_\-vertex\-Bone\-Data}}
+\index{m\-\_\-vertex\-Bone\-Data@{m\-\_\-vertex\-Bone\-Data}!SceneLoader@{Scene\-Loader}}
+\subsubsection[{m\-\_\-vertex\-Bone\-Data}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf vertex\-Bone\-Info} $>$ Scene\-Loader\-::m\-\_\-vertex\-Bone\-Data}}\label{class_scene_loader_a1835f991ea13ab5521868e603a62c8f0}
+
+
+per vertex data that stores the influence bone ids and weights 
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/prethish/\-Coding/\-Thesis\-\_\-new/\-L\-B\-Skin/include/\hyperlink{_scene_loader_8h}{Scene\-Loader.\-h}\end{DoxyCompactItemize}

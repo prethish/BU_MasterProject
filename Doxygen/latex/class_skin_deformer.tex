@@ -1,0 +1,112 @@
+\hypertarget{class_skin_deformer}{\section{Skin\-Deformer Class Reference}
+\label{class_skin_deformer}\index{Skin\-Deformer@{Skin\-Deformer}}
+}
+
+
+it first creates and stores the vertex data from the scene data passed to it A vertex\-Array\-Object for open\-G\-L drawing is also created for the deformed mesh Based on the skinning algorithm selected the mesh is deformed  
+
+
+
+
+{\ttfamily \#include $<$Skin\-Deformer.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_skin_deformer_a6cdb6cec406f97df387484aa74fb2e98}{Skin\-Deformer} ()
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+\hyperlink{class_skin_deformer_a7afd6e1689fa0b7b998cda8317f531a6}{$\sim$\-Skin\-Deformer} ()
+\begin{DoxyCompactList}\small\item\em destructor to uninitialize the set\-V\-A\-O and delete pointer objects \end{DoxyCompactList}\item 
+void \hyperlink{class_skin_deformer_aa332485f42e502b40852cf1b947d89c0}{draw\-Deform\-Mesh} ()
+\begin{DoxyCompactList}\small\item\em function that is called to draw the deformed mesh Using V\-A\-O \end{DoxyCompactList}\item 
+void \hyperlink{class_skin_deformer_a1085c2782d53f0eb36295a5c676bc8c7}{update} ()
+\begin{DoxyCompactList}\small\item\em update the defomed mesh based on the update scene data calls the corresponding skin deformer based on the set algorithm \end{DoxyCompactList}\item 
+void \hyperlink{class_skin_deformer_a6d12659544bc1b8117d4cb49d3e21b91}{set\-Mesh\-Data} (\hyperlink{class_scene_loader}{Scene\-Loader} $\ast$\-\_\-scene)
+\begin{DoxyCompactList}\small\item\em this sets a pointer to the scene data and also creates a copy of the vertex data \end{DoxyCompactList}\item 
+void \hyperlink{class_skin_deformer_a2d87e720e3e80e806d6c63ffae71b1aa}{set\-Skin\-Algorithm} (int \-\_\-i)
+\begin{DoxyCompactList}\small\item\em function to set the Skinning algorithm param\mbox{[}in\mbox{]} \-\_\-i index \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+it first creates and stores the vertex data from the scene data passed to it A vertex\-Array\-Object for open\-G\-L drawing is also created for the deformed mesh Based on the skinning algorithm selected the mesh is deformed 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_skin_deformer_a6cdb6cec406f97df387484aa74fb2e98}{\index{Skin\-Deformer@{Skin\-Deformer}!Skin\-Deformer@{Skin\-Deformer}}
+\index{Skin\-Deformer@{Skin\-Deformer}!SkinDeformer@{Skin\-Deformer}}
+\subsubsection[{Skin\-Deformer}]{\setlength{\rightskip}{0pt plus 5cm}Skin\-Deformer\-::\-Skin\-Deformer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_skin_deformer_a6cdb6cec406f97df387484aa74fb2e98}
+
+
+default constructor 
+
+\hypertarget{class_skin_deformer_a7afd6e1689fa0b7b998cda8317f531a6}{\index{Skin\-Deformer@{Skin\-Deformer}!$\sim$\-Skin\-Deformer@{$\sim$\-Skin\-Deformer}}
+\index{$\sim$\-Skin\-Deformer@{$\sim$\-Skin\-Deformer}!SkinDeformer@{Skin\-Deformer}}
+\subsubsection[{$\sim$\-Skin\-Deformer}]{\setlength{\rightskip}{0pt plus 5cm}Skin\-Deformer\-::$\sim$\-Skin\-Deformer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_skin_deformer_a7afd6e1689fa0b7b998cda8317f531a6}
+
+
+destructor to uninitialize the set\-V\-A\-O and delete pointer objects 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_skin_deformer_aa332485f42e502b40852cf1b947d89c0}{\index{Skin\-Deformer@{Skin\-Deformer}!draw\-Deform\-Mesh@{draw\-Deform\-Mesh}}
+\index{draw\-Deform\-Mesh@{draw\-Deform\-Mesh}!SkinDeformer@{Skin\-Deformer}}
+\subsubsection[{draw\-Deform\-Mesh}]{\setlength{\rightskip}{0pt plus 5cm}void Skin\-Deformer\-::draw\-Deform\-Mesh (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_skin_deformer_aa332485f42e502b40852cf1b947d89c0}
+
+
+function that is called to draw the deformed mesh Using V\-A\-O 
+
+\hypertarget{class_skin_deformer_a6d12659544bc1b8117d4cb49d3e21b91}{\index{Skin\-Deformer@{Skin\-Deformer}!set\-Mesh\-Data@{set\-Mesh\-Data}}
+\index{set\-Mesh\-Data@{set\-Mesh\-Data}!SkinDeformer@{Skin\-Deformer}}
+\subsubsection[{set\-Mesh\-Data}]{\setlength{\rightskip}{0pt plus 5cm}void Skin\-Deformer\-::set\-Mesh\-Data (
+\begin{DoxyParamCaption}
+\item[{{\bf Scene\-Loader} $\ast$}]{\-\_\-scene}
+\end{DoxyParamCaption}
+)}}\label{class_skin_deformer_a6d12659544bc1b8117d4cb49d3e21b91}
+
+
+this sets a pointer to the scene data and also creates a copy of the vertex data 
+
+
+\begin{DoxyParams}{Parameters}
+{\em is\mbox{]}} & \hyperlink{class_scene_loader}{Scene\-Loader} scene\-Data \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_skin_deformer_a2d87e720e3e80e806d6c63ffae71b1aa}{\index{Skin\-Deformer@{Skin\-Deformer}!set\-Skin\-Algorithm@{set\-Skin\-Algorithm}}
+\index{set\-Skin\-Algorithm@{set\-Skin\-Algorithm}!SkinDeformer@{Skin\-Deformer}}
+\subsubsection[{set\-Skin\-Algorithm}]{\setlength{\rightskip}{0pt plus 5cm}void Skin\-Deformer\-::set\-Skin\-Algorithm (
+\begin{DoxyParamCaption}
+\item[{int}]{\-\_\-i}
+\end{DoxyParamCaption}
+)}}\label{class_skin_deformer_a2d87e720e3e80e806d6c63ffae71b1aa}
+
+
+function to set the Skinning algorithm param\mbox{[}in\mbox{]} \-\_\-i index 
+
+\hypertarget{class_skin_deformer_a1085c2782d53f0eb36295a5c676bc8c7}{\index{Skin\-Deformer@{Skin\-Deformer}!update@{update}}
+\index{update@{update}!SkinDeformer@{Skin\-Deformer}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void Skin\-Deformer\-::update (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_skin_deformer_a1085c2782d53f0eb36295a5c676bc8c7}
+
+
+update the defomed mesh based on the update scene data calls the corresponding skin deformer based on the set algorithm 
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/prethish/\-Coding/\-Thesis\-\_\-new/\-L\-B\-Skin/include/\hyperlink{_skin_deformer_8h}{Skin\-Deformer.\-h}\end{DoxyCompactItemize}

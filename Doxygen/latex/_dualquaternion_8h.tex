@@ -1,0 +1,11 @@
+\hypertarget{_dualquaternion_8h}{\section{/home/prethish/\-Coding/\-Thesis\-\_\-new/\-L\-B\-Skin/include/\-Dualquaternion.h File Reference}
+\label{_dualquaternion_8h}\index{/home/prethish/\-Coding/\-Thesis\-\_\-new/\-L\-B\-Skin/include/\-Dualquaternion.\-h@{/home/prethish/\-Coding/\-Thesis\-\_\-new/\-L\-B\-Skin/include/\-Dualquaternion.\-h}}
+}
+{\ttfamily \#include $<$ngl/\-Quaternion.\-h$>$}\\*
+Include dependency graph for Dualquaternion.\-h\-:
+This graph shows which files directly or indirectly include this file\-:
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_dual_quaternion}{Dual\-Quaternion}
+\begin{DoxyCompactList}\small\item\em it uses N\-G\-L\-::\-Quaternion class to repersent the real and dual parts of a \hyperlink{class_dual_quaternion}{Dual\-Quaternion} a Dual quaternion is made of 2 quaternions,it uses Dual number arthematic a \hyperlink{class_dual_quaternion}{Dual\-Quaternion} q=qr+\-E.qd-\/ where E is dual coeficiant with property E$\ast$\-E=0, -\/where(m\-\_\-real) qr=real quaternion part which is usually used to represent rotation default value is \mbox{[}0,0,0,1\mbox{]} since the nql\-::\-Quaternion representation is \mbox{[}x,y,z,w\mbox{]} -\/where(m\-\_\-dual) qd=dual quaternion part which is usually used to represent translation or a point default value is \mbox{[}0,0,0,0\mbox{]} since the nql\-::\-Quaternion representation is \mbox{[}x,y,z.\-w\mbox{]} since it uses quaternions many of its arthematic properties are similar to Quaternions Note\-:1.\-Dual\-Quaterions works only on rigid transforms,so using a non rigid transform affine matrix( with scalling) \end{DoxyCompactList}\end{DoxyCompactItemize}

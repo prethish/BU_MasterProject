@@ -1,0 +1,7 @@
+digraph "Graphical Class Hierarchy"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="boneInfo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structbone_info.html",tooltip="struct to store bone data per bone for skinning the matrix stored are in the assimp order..."];
+}
